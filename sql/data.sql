@@ -16,4 +16,21 @@ CREATE TABLE Info(
     Devise_Compte VARCHAR (10),
     Devise_Equivalence VARCHAR (10)
 );
+CREATE TABLE Plan_Comptable(
+    id INT AUTO_INCREMENT,
+    Numero DOUBLE ,
+    Nom VARCHAR(20)
+);
+CREATE TABLE Plan_Tiers(
+    id INT AUTO_INCREMENT,
+    Num VARCHAR(20),
+    Intitule VARCHAR(20)
+);
+CREATE TABLE Journeaux(
+    id INT AUTO_INCREMENT,
+    Code VARCHAR(15),
+    Journeaux VARCHAR(30)
+);
+
 DROP  TABLE Info;
+DROP TABLE Plan_Comptable;
