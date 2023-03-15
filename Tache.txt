@@ -1,0 +1,23 @@
+Mika
+Plan comptable(CSV)
+   ajouter nouveau(objet)=insertion
+   supprimer 
+   modifier
+   select all
+Jenny
+Plan Tiers
+    ajouter nouveau(objet)=insertion
+   supprimer 
+   modifier
+   select all
+code journaux
+      ajouter nouveau(objet)=insertion
+   supprimer 
+   modifier
+   select all
+Table exercice
+Table achat
+Table vente
+Table banque
+Table journal
+Table Bilan
