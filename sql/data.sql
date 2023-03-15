@@ -34,5 +34,6 @@ CREATE TABLE Journeaux(
     Journeaux VARCHAR(30)
 );
 
+
 DROP  TABLE Info;
 DROP TABLE Plan_Comptable;
