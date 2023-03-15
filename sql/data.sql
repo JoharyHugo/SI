@@ -33,6 +33,43 @@ CREATE TABLE Journeaux(
     Code VARCHAR(15),
     Journeaux VARCHAR(30)
 );
+CREATE TABLE Achat(
+    idAchat INT AUTO_INCREMENT PRIMARY KEY,
+    date INT,
+    numeroPiece VARCHAR(20),
+    idCompteGenerale INT,
+    FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
+    idCompteTiers INT,
+    FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
+    Libelle VARCHAR(35),
+    debit DOUBLE,
+    credit DOUBLE
+);
+
+CREATE TABLE Vente(
+    idVente INT AUTO_INCREMENT PRIMARY KEY,
+    date INT,
+    numeroPiece VARCHAR(20),
+    idCompteGenerale INT,
+    FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
+    idCompteTiers INT,
+    FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
+    Libelle VARCHAR(35),
+    debit DOUBLE,
+    credit DOUBLE
+);
+CREATE TABLE Banque(
+    idBanque INT AUTO_INCREMENT PRIMARY KEY,
+    date INT,
+    numeroPiece VARCHAR(20),
+    idCompteGenerale INT,
+    FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
+    idCompteTiers INT,
+    FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
+    Libelle VARCHAR(35),
+    debit DOUBLE,
+    credit DOUBLE
+);
 
 
 DROP  TABLE Info;
