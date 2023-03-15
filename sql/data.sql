@@ -23,6 +23,7 @@ CREATE TABLE Plan_Comptable(
 );
 CREATE TABLE Plan_Tiers(
     id INT AUTO_INCREMENT,
+    Type VARCHAR(10)
     Num VARCHAR(20),
     Intitule VARCHAR(20)
 );
