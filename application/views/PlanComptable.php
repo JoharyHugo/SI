@@ -8,7 +8,7 @@
     <title>Plan Comptable</title>
 </head>
 <body style="background-image: url(<?php echo base_url("assets/images/image.jpg"); ?>) ; background-repeat: no-repeat; background-size: 100% auto; ">
-    <form action="#" method="post" style="margin-top: 100px; background-color:white;">
+    <form action="#" method="post" style="margin-top: 180px; background-color:white;">
             <center><h1>Plan Comptable</h1></center>
             <label for="numero">numero:</label>
             <input type="number" name="numero" id="numero">
