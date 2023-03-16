@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/styles.css"); ?>">
     <title>Formulaire</title>
 </head>
-<body>
-<form action="traitement/traitement.php" method="get">
+<body style="background-image: url(<?php echo base_url("assets/images/Créer-une-société-à-un-seul-associé.jpg"); ?>) ;  ">
+<form action="traitement/traitement.php" method="get" style="background-color: aqua;">
     <center><h1>Formulaire</h1></center>
         <label for="nom">Nom Societe:</label>
         <input type="text" name="nom" id="nom">

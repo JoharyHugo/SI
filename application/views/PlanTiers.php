@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/styles.css"); ?>">
     <title>Plan Tiers</title>
 </head>
-<body>
-<form action="#" method="post" style="margin-top: 100px;">
+<body style="background-color: #0062cc;">
+<form action="#" method="post" style="margin-top: 150px; background-color: aqua;">
             <center><h1>Plan Tiers</h1></center>
             <label for="type">Type:</label>
             <input type="text" name="type" id="type">
