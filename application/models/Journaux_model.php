@@ -22,20 +22,38 @@
         public function getJourneaux($id)
         {
             $sql = "SELECT * from  Journeaux WHERE id = %d";
-            $sql = sprintf($sql, $idProprietaire);
+            $sql = sprintf($sql, $id);
             $query = $this->db->query($sql);
 
             return $query->row_array();
         }
 
-        public function ajoutJournaux($id,$code,$Journeaux)
+        public function ajoutJournaux($code,$Journeaux)
         {
            $sql="insert into Journeaux values (null,'%s','%s')";
-           $sql=sprintf($sql,$id,$code,$Journeaux);
+           $sql=sprintf($sql,$code,$Journeaux);
            try {
             $this->db->query($sql);
            } catch (Exception $th) {
             throw new Exception($th->getMessage());
+           }
+        }
+
+        public function supprimerJournau($id){
+            $sql=$this->db->query("DELETE FROM Journeaux where id='$id'");
+            //echo $sql;
+            
+        }  
+        
+        public function updateJournau($id,$code,$Journeaux)
+        {
+           $sql="update Journeaux set code='%s',journeaux='%s' where id=%d";
+           $sql=sprintf($sql,$code,$Journeaux,$id);
+            //echo $sql;
+           try {
+           $this->db->query($sql);
+           } catch (Exception $e) {
+            throw $e;
            }
         }
         /*public function getUserObjet($idUser)

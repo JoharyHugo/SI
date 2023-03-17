@@ -8,7 +8,7 @@
     <title>Plan Comptable</title>
 </head>
 <body>
-    <form action="#" method="post" style="margin-top: 100px;">
+    <form action="<?php echo site_url('planComptable/newPlanComptable'); ?>" method="post" style="margin-top: 100px;">
             <center><h1>Plan Comptable</h1></center>
             <label for="numero">numero:</label>
             <input type="number" name="numero" id="numero">
@@ -18,5 +18,6 @@
             <br><br>
             <input type="submit" value="Valider">
     </form>
+    <a href="<?php echo site_url('planComptable/getAllComptables'); ?>">voir planComptable</a>
 </body>
 </html>

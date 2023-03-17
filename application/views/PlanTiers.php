@@ -8,7 +8,7 @@
     <title>Plan Tiers</title>
 </head>
 <body>
-<form action="#" method="post" style="margin-top: 100px;">
+<form action="<?php echo site_url('planTiers/newPlanTiers'); ?>" method="post" style="margin-top: 100px;">
             <center><h1>Plan Tiers</h1></center>
             <label for="type">Type:</label>
             <input type="text" name="type" id="type">
@@ -21,5 +21,21 @@
             <br><br>
             <input type="submit" value="Valider">
     </form>
+    <a href="<?php echo site_url('planTiers/getAllTiers'); ?>">voir plus</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('welcome/comptable'); ?>">voir comptable</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('welcome/codeJournaux');?>">voir Journeau</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('welcome/formulaire');?>">voir societe</a>
+     <br/>
+    <br/>
+    <a href="<?php echo site_url('welcome/journal');?>">voir journal</a>
+    <br/>
+    <br/>
+  
 </body>
 </html>

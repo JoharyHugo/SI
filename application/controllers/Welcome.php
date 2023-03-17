@@ -20,7 +20,38 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('PlanComptable');
+		$this->load->view('PlanTiers');
 		
 	}		
+
+	public function voir()
+	{
+		$this->load->view('Plus');
+		
+	}	
+	public function comptable()
+	{
+		$this->load->view('PlanComptable');
+	}
+	public function codeJournaux()
+	{
+		$this->load->view('CodeJourneau');
+	}
+	public function formulaire()
+	{
+		$this->load->view('formulaire');
+	}
+	public function journal()
+	{
+		$this->load->view('BilanJournal');
+	}
+	public function balance()
+	{
+		$this->load->view('Balance');
+	}
+	public function grandLivre()
+	{
+		$this->load->view('GrandLivre');
+	}
+
 }

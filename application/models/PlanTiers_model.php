@@ -16,17 +16,19 @@
         public function getTiers($id){
             $sql = "SELECT * FROM Plan_Tiers WHERE id = %d";
             $sql = sprintf($sql, $id);
-            $query= $this->db->query($sql);
-            $liste= $query->row_array();
+            //echo $sql;
+            $query = $this->db->query($sql);
+            $liste = $query->row_array();
             return $liste;
         }
 
-        public function nouveauPlanTiers($id,$type,$num,$intituler)
+        public function nouveauPlanTiers($type,$num,$intituler)
         {
             $sql="insert into Plan_Tiers values (null,'%s','%s','%s')";
-            $sql=sprintf($sql,$id,$type,$num,$intituler);
+            $sql=sprintf($sql,$type,$num,$intituler);
             try {
-            $this->db->query($sql);
+                //echo $sql;
+                $this->db->query($sql);
             } 
             catch (Exception $th) 
             {
@@ -35,13 +37,16 @@
         }
         
         public function supprimerTiers($id){
-            $this->db->query("DELETE FROM Plan_Tiers where id='$id'");
+            $sql=$this->db->query("DELETE FROM Plan_Tiers where id='$id'");
+            //echo $sql;
+            
         }  
         
-        public function modifierTiers($id,$newTiers)
+        public function modifierTiers($id,$type,$numero,$intituler)
         {
-           $sql="update Plan_Tiers set intituler= '%s' where id=%d";
-           $sql=sprintf($sql,$newTiers,$id);
+           $sql="update Plan_Tiers set type='%s',num='%s', intitule= '%s' where id=%d";
+           $sql=sprintf($sql,$type,$numero,$intituler,$id);
+            //echo $sql;
            try {
            $this->db->query($sql);
            } catch (Exception $e) {

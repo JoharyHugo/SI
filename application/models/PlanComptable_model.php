@@ -6,7 +6,8 @@
         public function nouveauPlanComptable($numero,$nom)
         {
             $sql="insert into Plan_Comptable values (null,'%d','%s')";
-            $sql=sprintf($sql,$id,$numero,$nom);
+            $sql=sprintf($sql,$numero,$nom);
+            //echo $sql;
             try {
             $this->db->query($sql);
             } 
@@ -62,26 +63,6 @@
         public function supprimerPlanComptable($id){
             $this->db->query("DELETE FROM Plan_Comptable where id='$id'");
         }
-
-        /*public function getUserOb($idObjet)
-        { //dpcklc,
-           $sql="select u.idUser,u.nom,u.prenom,u.mail,u.tel from Objet o join User u on o.idUser=u.idUser where  o.idObjet=%d";
-           $sql=sprintf($sql,$idObjet);  
-           $query=$this->db->query($sql);
-           $liste=$query->row_array();
-           return $liste;                                                                                       
-        }
-
-        public function supprimerObjet($idObjet)
-        {
-            try {
-                $this->db->query("DELETE FROM Photo where idObjet='$idObjet'");
-                $this->db->query("DELETE FROM Echange where idObjetDemande='$idObjet' or idObjetEchange='$idObjet'");
-                $this->db->query("DELETE FROM Objet where idObjet='$idObjet'");
-                } catch (\Throwable $th) {
-                    throw $th;
-                }
-        }*/      
 
     // Traitement Photo
     function getAllPhoto() {
