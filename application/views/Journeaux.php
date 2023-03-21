@@ -29,7 +29,7 @@
 				<img src="<?php echo base_url("assets/images/img.jpg"); ?>" alt="IMG">
 			</div>
 
-			<form action="#" class="contact1-form validate-form" method="get">
+			<form action="<?php echo site_url('journau/newJourneau'); ?>"  class="contact1-form validate-form" method="post">
 				<span class="contact1-form-title">
 					Journal
 				</span>
@@ -57,6 +57,7 @@
 	</div>
 
 
+    <a href="<?php echo site_url('journau/getAllJournaux'); ?>">voir code Journeaux</a>
 
 
 <!--===============================================================================================-->

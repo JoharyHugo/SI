@@ -1,6 +1,7 @@
 CREATE DATABASE SI;
 USE SI;
 DROP  DATABASE SI;
+
 CREATE TABLE Info(
     id INT  AUTO_INCREMENT PRIMARY KEY ,
     Nom VARCHAR (20) ,
@@ -18,17 +19,20 @@ CREATE TABLE Info(
     Devise_Compte VARCHAR (10),
     Devise_Equivalence VARCHAR (10)
 );
+
 CREATE TABLE Plan_Comptable(
     id INT AUTO_INCREMENT PRIMARY KEY,
     Numero DOUBLE ,
     Nom VARCHAR(20)
 );
+
 CREATE TABLE Plan_Tiers(
     id INT AUTO_INCREMENT PRIMARY KEY,
     Type VARCHAR(10),
     Num VARCHAR(20),
     Intitule VARCHAR(20)
 );
+
 CREATE TABLE Journeaux(
     id INT AUTO_INCREMENT PRIMARY KEY,
     Code VARCHAR(15),
@@ -65,6 +69,80 @@ CREATE TABLE JournalTemp(
     Debit DOUBLE,
     Credit DOUBLE,
     FOREIGN KEY(idSociete) REFERENCES Info(id)
+);
+
+
+CREATE TABLE JournalTemporaire(
+    idJournal INT AUTO_INCREMENT PRIMARY KEY,
+    date INT,
+    numeroPiece VARCHAR(20),
+    PieceReference VARCHAR(20),
+    CompteGenerale VARCHAR(20),
+    CompteTiers VARCHAR(20),
+    Libelle VARCHAR(35),
+    Type VARCHAR(20),
+    debit DOUBLE,
+    credit DOUBLE,
+    devise VARCHAR(20),
+    Montant DOUBLE
+);
+
+CREATE TABLE AchatJournal(
+    idAchat INT AUTO_INCREMENT PRIMARY KEY,
+    date INT,
+    numeroPiece VARCHAR(20),
+    PieceReference VARCHAR(20),
+    idCompteGenerale INT,
+    FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
+    idCompteTiers INT,
+    FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
+    Libelle VARCHAR(35),
+    debit DOUBLE,
+    credit DOUBLE,
+    devise DOUBLE
+);
+
+CREATE TABLE VenteJournal(
+    idVente INT AUTO_INCREMENT PRIMARY KEY,
+    date INT,
+    numeroPiece VARCHAR(20),
+    PieceReference VARCHAR(20),
+    idCompteGenerale INT,
+    FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
+    idCompteTiers INT,
+    FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
+    Libelle VARCHAR(35),
+    debit DOUBLE,
+    credit DOUBLE,
+    devise DOUBLE
+);
+
+CREATE TABLE BanqueJournal(
+    idBanque INT AUTO_INCREMENT PRIMARY KEY,
+    date INT,
+    numeroPiece VARCHAR(20),
+    PieceReference VARCHAR(20),
+    idCompteGenerale INT,
+    FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
+    idCompteTiers INT,
+    FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
+    Libelle VARCHAR(35),
+    debit DOUBLE,
+    credit DOUBLE,
+    devise DOUBLE
+);
+CREATE TABLE User(
+    userId INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(20),
+    prenom VARCHAR(20),
+    mdp VARCHAR(20),
+    mail VARCHAR(20),
+    tel VARCHAR(20)
+);
+CREATE TABLE Admin(
+    adminId INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(20),
+    mdp VARCHAR(20)
 );
 
 DROP  TABLE Info;

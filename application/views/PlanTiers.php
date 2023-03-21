@@ -8,7 +8,7 @@
     <title>Plan Tiers</title>
 </head>
 <body style="background-color: #0062cc;">
-<form action="#" method="post" style="margin-top: 150px; background-color: aqua;">
+<form action="<?php echo site_url('planTiers/newPlanTiers'); ?>" method="post" style="margin-top: 150px; background-color: aqua;">
             <center><h1>Plan Tiers</h1></center>
             <label for="type">Type:</label>
             <input type="text" name="type" id="type">
@@ -21,5 +21,6 @@
             <br><br>
             <input type="submit" value="Valider">
     </form>
+    <a href="<?php echo site_url('planTiers/getAllTiers'); ?>">voir plus</a>
 </body>
 </html>
