@@ -9,6 +9,7 @@ CREATE TABLE Info(
     Adresse VARCHAR (20),
     Nom_dirigeant VARCHAR (20),
     Logo VARCHAR(100),
+    Mdp VARCHAR(50),
     Num_Identification_Fiscal DOUBLE ,
     Num_Statistique DOUBLE ,
     Num_Registre_Commerce DOUBLE ,
@@ -32,6 +33,36 @@ CREATE TABLE Journeaux(
     id INT AUTO_INCREMENT PRIMARY KEY,
     Code VARCHAR(15),
     Journeaux VARCHAR(30)
+);
+CREATE TABLE Journal(
+    idJournal  INT  AUTO_INCREMENT PRIMARY KEY ,
+    idSociete INT,
+    Jour INT,
+    Piece DOUBLE ,
+    Reference VARCHAR(100),
+    Compte INT,
+    Compte_Tiers INT,
+    Libelle VARCHAR(80),
+    Devise VARCHAR(30),
+    MontantDevise DOUBLE,
+    Debit DOUBLE,
+    Credit DOUBLE,
+    FOREIGN KEY(idSociete) REFERENCES Info(id)
+);
+CREATE TABLE JournalTemp(
+    idJournalTemp  INT  AUTO_INCREMENT PRIMARY KEY ,
+    idSociete INT,
+    Jour INT,
+    Piece DOUBLE ,
+    Reference VARCHAR(100),
+    Compte INT,
+    Compte_Tiers INT,
+    Libelle VARCHAR(80),
+    Devise VARCHAR(30),
+    MontantDevise DOUBLE,
+    Debit DOUBLE,
+    Credit DOUBLE,
+    FOREIGN KEY(idSociete) REFERENCES Info(id)
 );
 
 DROP  TABLE Info;
