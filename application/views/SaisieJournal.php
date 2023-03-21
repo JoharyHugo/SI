@@ -101,8 +101,7 @@
                 </tr>
               </table>  
             </div>
-        </div>
-           
+        </div>    
 </div>
 
   
@@ -113,5 +112,6 @@
     <br/>
     <br/>
     <a href="<?php echo site_url('journalAchat/verification');?>">validation journal</a>
+    <p><a href="<?php echo site_url('CSV/import_xls_data');?>">insertion</a></p>
 </body>
 </html>

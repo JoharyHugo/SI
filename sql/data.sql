@@ -26,6 +26,12 @@ CREATE TABLE Plan_Comptable(
     Nom VARCHAR(20)
 );
 
+CREATE TABLE tablecompte(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Compte VARCHAR(20),
+    Intitule VARCHAR(20)
+);
+
 CREATE TABLE Plan_Tiers(
     id INT AUTO_INCREMENT PRIMARY KEY,
     Type VARCHAR(10),
@@ -38,6 +44,7 @@ CREATE TABLE Journeaux(
     Code VARCHAR(15),
     Journeaux VARCHAR(30)
 );
+
 CREATE TABLE Journal(
     idJournal  INT  AUTO_INCREMENT PRIMARY KEY ,
     idSociete INT,
