@@ -29,7 +29,8 @@
 						      <th>id</th>
 						      <th>Numero</th>
 						      <th>Intitule</th>
-						     
+						     	<th>Delete</th>
+								<th>Update</th>
 						    </tr>
 						  </thead>
 						  <tbody>
@@ -37,22 +38,29 @@
 						      <th scope="row">1</th>
 						      <td>10100</td>
 						      <td>Capital</td>
-						    
+						      <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>
 						    </tr>
 						    <tr>
 						      <th scope="row">2</th>
 						      <td>10610</td>
 						      <td>Reserve</td>
+							  <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>
 						    </tr>
 						    <tr>
 						      <th scope="row">3</th>
 						      <td>32120</td>
 						      <td>Fourniture</td>
+							  <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>
 						    </tr>
 						    <tr>
 						      <th scope="row">4</th>
 						      <td>13300</td>
 						      <td>Impot</td>
+							  <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>
 						    </tr>
 						  </tbody>
 						</table>
