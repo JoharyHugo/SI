@@ -1,0 +1,27 @@
+.sp1{
+    
+    margin-top: 20px;
+    
+}
+.sp1 input[type="text"],[type="number"]{
+
+    height: 20px;
+    width: 120px;
+}
+table.normal {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 90%;
+    border: 1px solid #ddd;
+  }
+  
+  table.normal th, table.normal td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  table.normal th {
+    background-color: #f2f2f2;
+    color: black;
+  }
