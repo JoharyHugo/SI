@@ -29,30 +29,38 @@
 						      <th>Type</th>
 						      <th>Numero</th>
 						      <th>Intitule</th>
-						      
+						      <th>Delete</th>
+							  <th>Update</th>
 						    </tr>
 						  </thead>
 						  <tbody>
 						    <tr>
 						      <th scope="row">Fo</th>
 						      <td>Jirama</td>
-						      <td>FRNS:Jirama</td>					      
+						      <td>FRNS:Jirama</td>		
+							  <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>			      
 						    </tr>
 						    <tr>
 						      <th scope="row">Cl</th>
 						      <td>Lamber</td>
 						      <td>CLT:Lamber</td>
+							  <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>
 						    </tr>
 						    <tr>
 						      <th scope="row">FO</th>
 						      <td>Lovasoa</td>
 						      <td>FRNS:Lovasoa</td>
-						     
+							  <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>
 						    </tr>
 						    <tr>
 						      <th scope="row">Cl</th>
 						      <td>Noro</td>
 						      <td>CLT:Noro</td>
+							  <td><a href="#">Supprimer</a></td>
+							  <td><a href="#">Modifier</a></td>
 						    </tr>
 						  </tbody>
 						</table>
