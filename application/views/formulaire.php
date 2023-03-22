@@ -25,6 +25,9 @@
         <label for="logo">logo:</label>
         <input type="file" name="logo" id="logo">
         <br><br>
+        <label for="mdp">Mot de passe:</label>
+        <input type="password" name="mdp" id="mdp">
+        <br><br>
         <label for="dirigeant">Nom Dirigeant:</label>
         <input type="text" name="dirigeant" id="dirigeant">
         <br><br>
