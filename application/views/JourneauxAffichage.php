@@ -41,7 +41,8 @@
                     <td>15000</td>
                     <td>15000</td>
                     <td>15000</td>
-                </tr>        </table>
+                </tr>        
+            </table>
           
             </div>
            
