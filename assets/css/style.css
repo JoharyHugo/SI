@@ -20,6 +20,10 @@ table.normal {
     background-color: #f2f2f2;
     color: black;
   }
+  table.normal td {
+    background-color: white;
+    
+  }
   .normal input{
       width: 150px;
   }
