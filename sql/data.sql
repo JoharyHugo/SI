@@ -131,19 +131,7 @@ CREATE TABLE BanqueJournal(
     credit DOUBLE,
     devise DOUBLE
 );
-CREATE TABLE User(
-    userId INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(20),
-    prenom VARCHAR(20),
-    mdp VARCHAR(20),
-    mail VARCHAR(20),
-    tel VARCHAR(20)
-);
-CREATE TABLE Admin(
-    adminId INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(20),
-    mdp VARCHAR(20)
-);
+
 
 DROP  TABLE Info;
 DROP TABLE Plan_Comptable;
