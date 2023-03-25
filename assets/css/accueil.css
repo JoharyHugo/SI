@@ -41,8 +41,8 @@ main {
 #info{
   background-color: orange;
   height: 447px;
-  width: 538px;
-  margin-left: 129px;
+  width: 612px;
+  margin-left: 98px;
 }
 #detail {
   padding-top: 30px;
@@ -52,6 +52,6 @@ main {
 #detail li{
   margin-bottom: 30px;
   list-style: none;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }
