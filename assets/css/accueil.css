@@ -6,7 +6,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color:aqua ;
   color: #fff;
 }
 
@@ -22,7 +22,7 @@ nav li {
 
 nav li a {
   display: block;
-  color: #fff;
+  color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -36,8 +36,22 @@ main {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
+  
 }
 #info{
   background-color: orange;
+  height: 447px;
+  width: 538px;
+  margin-left: 129px;
+}
+#detail {
+  padding-top: 30px;
+  padding-bottom: 10px;
+ 
+}
+#detail li{
+  margin-bottom: 30px;
+  list-style: none;
+  font-size: 25px;
+  font-weight: bold;
 }

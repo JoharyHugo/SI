@@ -18,9 +18,13 @@
       </nav>
     </header>
     <main>
-      <h1>Bienvenue</h1>
+      <center><h1>Bienvenue</h1></center>
       <div id="info">
-        phgozgnpzh
+        <ul id="detail">
+          <li>Nom:</li>
+          <li>Logo:</li>
+          <li>Adresse:</li>
+        </ul>
       </div>
     </main>
   </body>
