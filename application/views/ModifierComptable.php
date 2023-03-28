@@ -12,7 +12,6 @@
             <center><h1>Plan Comptable</h1></center>
             <input type="hidden" name="id" id="id" value="<?php echo $datas['id']; ?>">
             <br><br> 
-            <label for="type">Type:</label>
             <label for="numero">numero:</label>
             <input type="text" name="numero" id="numero" value="<?php echo $datas['Numero']; ?>">
             <br><br>    

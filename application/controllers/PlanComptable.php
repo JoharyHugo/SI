@@ -13,7 +13,7 @@ class PlanComptable extends CI_Controller {
         $this->load->model('PlanComptable_model','model');
         $val=$this->model->getAllCompte();
         $data['reponse'] = $val;
-        $this->load->view('Voir',$data);
+        $this->load->view('tablePlanComptable',$data);
     }
     public function getOneCompte($id)
     {

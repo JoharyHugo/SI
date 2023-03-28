@@ -25,22 +25,37 @@
 					<div class="table-wrap">
 						<table class="table table-bordered table-dark table-hover">
 						  <thead>
-						    <tr>
+						  <th>Type</th>
+                          <th>Numero</th>
+                          <th>Intitule</th>
+                          <th></th>
+                          <th></th>
+                           <?php for ($i=0; $i < count($reponse); $i++) { ?>
+                             <tr>
+                           <td><?php echo $reponse[$i]['Type']; ?></td>
+                            <td><?php echo $reponse[$i]['Num']; ?></td>
+                            <td><?php echo $reponse[$i]['Intitule']; ?></td>
+                              <td><a href="<?php echo site_url("/planTiers/getOneTiers/".$reponse[$i]['id']); ?>">modifier</a></td>
+                            <td><a href="<?php echo site_url("/planTiers/deleteTiers/".$reponse[$i]['id']); ?>">supprimer</a></td>
+                           </tr>
+                       <?php }?>
+
+						    <!--tr>
 						      <th>Type</th>
 						      <th>Numero</th>
 						      <th>Intitule</th>
 						      <th>Delete</th>
 							  <th>Update</th>
-						    </tr>
+						    </!--tr>
 						  </thead>
-						  <tbody>
-						    <tr>
+						  <tbody-->
+						    <!--tr>
 						      <th scope="row">Fo</th>
 						      <td>Jirama</td>
 						      <td>FRNS:Jirama</td>		
 							  <td><a href="#">Supprimer</a></td>
 							  <td><a href="#">Modifier</a></td>			      
-						    </tr>
+						    </!--tr>
 						    <tr>
 						      <th scope="row">Cl</th>
 						      <td>Lamber</td>
@@ -62,7 +77,7 @@
 							  <td><a href="#">Supprimer</a></td>
 							  <td><a href="#">Modifier</a></td>
 						    </tr>
-						  </tbody>
+						  </tbody-->
 						</table>
 					</div>
 				</div>

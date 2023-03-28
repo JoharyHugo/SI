@@ -29,20 +29,23 @@
                     <th>Debit</th>
                     <th>Credit</th>
                 </tr>
-                <tr>
-                    <td >9</td>
-                    <td>1</td>
-                    <td>BOABOA/46616</td>
-                    <td>401000</td>
-                    <td>Feno</td>
-                    <td>AC</td>
-                    <td>Achat</td>
-                    <td>Ariary</td>
-                    <td>15000</td>
-                    <td>15000</td>
-                    <td>15000</td>
-                </tr>        
-            </table>
+                <?php  for ($i=0; $i < count($reponse); $i++) { ?>
+        <tr>
+            <td><?php echo $reponse[$i]['date']; ?></td>
+            <td><?php  echo $reponse[$i]['numeroPiece']; ?></td>
+            <td><?php  echo $reponse[$i]['PieceReference']; ?></td>
+            <td><?php echo $reponse[$i]['CompteGenerale']; ?></td>
+            <td><?php echo $reponse[$i]['CompteTiers']; ?></td>
+            <td><?php echo $reponse[$i]['Type']; ?></td>
+            <td><?php echo $reponse[$i]['Libelle']; ?></td>
+            <td><?php  echo $reponse[$i]['devise']; ?></td>
+            <td><?php  echo $reponse[$i]['Montant']?></td> 
+            <td><?php echo $reponse[$i]['debit']; ?></td>
+            <td><?php echo $reponse[$i]['credit']; ?></td>       
+        </tr>
+        <?php }?>
+    </table>
+    <a href="<?php echo site_url("journalAchat/total/");?>">voir total</a>        
           
             </div>
            

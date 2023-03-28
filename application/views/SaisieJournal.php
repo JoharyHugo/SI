@@ -83,7 +83,10 @@
     <a href="<?php echo site_url('welcome/balance');?>">voir la balance</a>
     <br/>
     <br/>
-    <a href="<?php echo site_url('journalAchat/verificationAchat');?>">validation journal achat</a>
+    <a href="<?php echo site_url('journalAchat/verification');?>">validation  journal temporaire </a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('journalAchat/verificationachat');?>">validation journal Achat</a>
     <br/>
     <br/>
     <a href="<?php echo site_url('journalAchat/verificationVente');?>">validation journal vente</a>

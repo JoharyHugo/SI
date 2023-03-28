@@ -42,7 +42,7 @@ class PlanTiers extends CI_Controller {
         $this->load->model('PlanTiers_model','model');
         $val=$this->model->getAllTiers();
         $data['reponse'] = $val;
-        $this->load->view('Plus',$data);
+        $this->load->view('tablePlanTiers',$data);
     }
     public function getOneTiers($id)
     {

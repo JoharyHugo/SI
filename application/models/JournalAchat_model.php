@@ -13,6 +13,40 @@
             return $liste;
         } 
 
+
+        
+        public function getJournalAchatValider(){
+            $sql = "SELECT * FROM JournalAchat";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getJournalVenteValider(){
+            $sql = "SELECT * FROM JournalVente";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getJournalBanqueValider(){
+            $sql = "SELECT * FROM JournalBanque";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
         public function getJournalAchat($type){
             $sql = "SELECT SUM(debit) AS totalDebit, SUM(credit) AS totalCredit FROM journalTemporaire WHERE type = '%s'";
             $sql = sprintf($sql, $type);
