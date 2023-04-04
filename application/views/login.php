@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('<?php echo base_url("assets/images/bg-01.jpg"); ?>');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+				<form  action="<?php echo site_url("login/checkLoginUser"); ?>" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
@@ -58,7 +58,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button type="submit" class="login100-form-btn">
 								Login
 							</button>
 						</div>
@@ -71,15 +71,15 @@
 					</div>
 
 					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
+						<a href="https://www.facebook.com/" class="login100-social-item bg1">
 							<i class="fa fa-facebook"></i>
 						</a>
 
-						<a href="#" class="login100-social-item bg2">
+						<a href="https://twitter.com/login?lang=fr" class="login100-social-item bg2">
 							<i class="fa fa-twitter"></i>
 						</a>
 
-						<a href="#" class="login100-social-item bg3">
+						<a href="https://www.google.com/?hl=fr" class="login100-social-item bg3">
 							<i class="fa fa-google"></i>
 						</a>
 					</div>
@@ -89,7 +89,7 @@
 							Or Sign Up Using
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="<?php echo site_url("login/inscription"); ?>" class="txt2">
 							Sign Up
 						</a>
 					</div>

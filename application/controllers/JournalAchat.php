@@ -61,17 +61,57 @@ class JournalAchat extends CI_Controller {
         $val=$this->model->getAllJournalAchat();
         $data['reponse'] = $val;
         //var_dump($valiny);
-        $this->load->view('HistoriqueJournal',$data);
+        $this->load->view('JourneauxAffichage',$data);
         //redirect("./welcome/balance");
                 
     }
+    
+    public function verificationAchat()
+    {
+        $this->load->model('JournalAchat_model', 'model');
+        $this->model->verificationSomme();
+        $val=$this->model->getJournalAchatValider();
+        $data['reponse'] = $val;
+        //var_dump($valiny);
+        $this->load->view('JourneauxAffichage',$data);
+        //redirect("./welcome/balance");
+                
+    }
+    
+    public function verificationVente()
+    {
+        $this->load->model('JournalAchat_model', 'model');
+        $this->model->verificationSomme();
+        $val=$this->model->getJournalVenteValider();
+        $data['reponse'] = $val;
+        //var_dump($valiny);
+        $this->load->view('JourneauxAffichage',$data);
+        //redirect("./welcome/balance");
+                
+    }
+    
+    public function verificationBanque()
+    {
+        $this->load->model('JournalAchat_model', 'model');
+        $this->model->verificationSomme();
+        $val=$this->model->getJournalBanqueValider();
+        $data['reponse'] = $val;
+        //var_dump($valiny);
+        $this->load->view('JourneauxAffichage',$data);
+        //redirect("./welcome/balance");
+                
+    }
+    
     public function total()
     {
         $this->load->model('JournalAchat_model', 'model');
         $rep=$this->model->getJournalAchat('Achat');
+        $rep=$this->model->getJournalAchat('Achat');
+        $rep=$this->model->getJournalAchat('Achat');
         $valiny['journal'] = $rep;
         $this->load->view('Total',$valiny);
     }
+    
 
     /*public function getAllTiers()
     {

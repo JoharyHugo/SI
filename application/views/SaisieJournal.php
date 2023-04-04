@@ -16,7 +16,7 @@
         
         <div class="row cont" style="width: 1700px;">
         <table class="normal">
-            <form action="#" method="post">
+            <form action="<?php echo base_url("journalAchat/newJournalAchat"); ?>" method="post">
                 <tr>
                     <th>Jour</th>
                     <th>Piece</th>
@@ -38,15 +38,15 @@
                     </select></td>
                     <td><input type="number" name="piece"></td>
                     <td><input type="text" name="reference"></td>
-                    <td><input type="number" name="compte"></td>
-                    <td><input type="text" name="tiers"></td>
-                    <td><select name="typage" id="">
+                    <td><input type="number" name="compte1"></td>
+                    <td><input type="text" name="compte2"></td>
+                    <td><select name="type" id="type">
                         <option value="Achat">Achat</option>
                         <option value="Vente">Vente</option>
                         <option value="Banque">Banque</option>
                     </select></td>
                     <td><input type="text" name="libelle"></td>
-                    <td><select name="device" id="">
+                    <td><select name="devise" id="devise">
                         <option value="Euro">Euro</option>
                         <option value="Ariary">Ariary</option>
                         <option value="Dollar">Dollar</option>
@@ -61,11 +61,40 @@
                </form>
             </div>
            
-         
-        </div>
-           
+            <div class="col-md-6" >
+            <table class="normal" border="1">
+                <tr>
+                    <th>Numero de Compte</th>
+                    <th>Nom de Compte</th>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Fournisseur</td>
+                </tr>
+              </table>  
+            </div>
+        </div>    
 </div>
 
   
+<a href="<?php echo site_url('welcome/grandLivre');?>">voir grand livre</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('welcome/balance');?>">voir la balance</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('journalAchat/verification');?>">validation  journal temporaire </a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('journalAchat/verificationachat');?>">validation journal Achat</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('journalAchat/verificationVente');?>">validation journal vente</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('journalAchat/verificationBanque');?>">validation journal banque</a>
+    <br/>
+    <br/>
+    <a href="<?php echo site_url('welcome/index');?>">upload fichier</a>
 </body>
 </html>

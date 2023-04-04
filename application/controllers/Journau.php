@@ -13,7 +13,7 @@ class Journau extends CI_Controller {
         $this->load->model('Journaux_model','model');
         $val=$this->model->getAllJourneaux();
         $data['reponse'] = $val;
-        $this->load->view('Journal',$data);
+        $this->load->view('tabcodeJournal',$data);
     }
     public function getOneJournau($id)
     {

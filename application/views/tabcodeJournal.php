@@ -30,10 +30,23 @@
 
         <table class="table custom-table">
           <thead>
-            <tr>      
+          <tbody>
+          <th>CODE</th>
+        <th>Journaux</th>
+        <th></th>
+        <th></th>
+        <?php for ($i=0; $i < count($reponse); $i++) { ?>
+        <tr>
+            <td><?php echo $reponse[$i]['Code']; ?></td>
+            <td><?php echo $reponse[$i]['Journeaux']; ?></td>
+            <td><a href="<?php echo site_url("/journau/getOneJournau/".$reponse[$i]['id']); ?>">modifier</a></td>
+            <td><a href="<?php echo site_url("/journau/deleteJournau/".$reponse[$i]['id']); ?>">supprimer</a></td>
+        </tr>
+        <?php }?>
+            <!--tr>      
               <th scope="col">Code</th>
               <th scope="col">Intitule</th>
-            </tr>
+            </!--tr>
           </thead>
           <tbody>
             <tr>
@@ -43,12 +56,12 @@
               <td>Achat</td>
              
             </tr>
-            <tr>
-              <td>AN</td>
+            <tr-->
+              <!--td>AN</!--td>
               <td>A Nouveau</td>
-            </tr>
+            </tr-->
             
-            
+            </thead>
           </tbody>
         </table>
       </div>

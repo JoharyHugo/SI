@@ -25,13 +25,28 @@
 					<div class="table-wrap">
 						<table class="table">
 						  <thead class="thead-primary">
-						    <tr>
+						<th>Numero</th>
+        				<th>Intitule</th>
+                        <th></th>
+                       <th></th>
+                       <?php for ($i=0; $i < count($reponse); $i++) { ?>
+						<tbody>
+						<tr>
+                        <td><?php echo $reponse[$i]['Numero']; ?></td>
+                        <td><?php echo $reponse[$i]['Nom']; ?></td>
+                        <td><a href="<?php echo site_url("/planComptable/getOneCompte/".$reponse[$i]['id']); ?>">modifier</a></td>
+                           <td><a href="<?php echo site_url("/planComptable/deleteCompte/".$reponse[$i]['id']); ?>">supprimer</a></td>
+                    </tr>
+                   <?php }?>
+				   </thead>
+						  
+						    <!--tr>
 						      <th>id</th>
 						      <th>Numero</th>
 						      <th>Intitule</th>
 						     	<th>Delete</th>
 								<th>Update</th>
-						    </tr>
+						    </!--tr>
 						  </thead>
 						  <tbody>
 						    <tr>
@@ -55,13 +70,13 @@
 							  <td><a href="#">Supprimer</a></td>
 							  <td><a href="#">Modifier</a></td>
 						    </tr>
-						    <tr>
-						      <th scope="row">4</th>
+						    <tr-->
+						      <!--th scope="row">4</!--th>
 						      <td>13300</td>
 						      <td>Impot</td>
 							  <td><a href="#">Supprimer</a></td>
 							  <td><a href="#">Modifier</a></td>
-						    </tr>
+						    </tr-->
 						  </tbody>
 						</table>
 					</div>
