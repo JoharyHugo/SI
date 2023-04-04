@@ -1,13 +1,32 @@
 <?php  
-
 /**
  * 
  */
-class CVS_model extends CI_Model{
-	
+if(!defined('BASEPATH') exit('No direct script access allowed'));
+class ReaderFile extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
+
+	/*public function lecteur($file){
+		$open = fopen($file, 'r');
+		$lire = fgets($open);
+		fclose($open);
+	}
+
+	public function ecriture($file, $count, $data){
+		if(isset(var)){
+
+		}else{
+
+		}
+		$open = fopen($file,'a+');
+		$lire = fgets($open);
+		$donne = $data;
+		fseek($open, 0);
+		fputs($open, $donne);
+		fclose($open);
+	}*/
 
 	// importer un fichier csv et transforme en tableau
 	public function importCVS($fichier, $separator){
@@ -30,7 +49,7 @@ class CVS_model extends CI_Model{
 	}
 
 
-	//export donnes de la base en fichier csv
+	//export donnes de base en fichier csv
 	public function exportCSV($donne, $nomFichier){
 		// formatage en texte
 		$text = "";
@@ -52,5 +71,7 @@ class CVS_model extends CI_Model{
 		header("content-description: file Tranfer");
 		write_file('php://output', $text);
 	}
+
+
 }
 ?>

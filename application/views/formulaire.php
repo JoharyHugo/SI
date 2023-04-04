@@ -8,7 +8,7 @@
     <title>Formulaire</title>
 </head>
 <body style="background-image: url(<?php echo base_url("assets/images/Créer-une-société-à-un-seul-associé.jpg"); ?>) ;  ">
-<form action="traitement/traitement.php" method="get" style="background-color: aqua;">
+<form action="<?php echo site_url('Formulaire_entreprise/ajout_entreprise'); ?>" method="get" style="background-color: aqua;">
     <center><h1>Formulaire</h1></center>
         <label for="nom">Nom Societe:</label>
         <input type="text" name="nom" id="nom">
@@ -58,10 +58,10 @@
         <option value="">--Selection--</option>
         <option value="Ar">Ar</option>
         <option value="Dollar">Dollar</option>
-       </select>>
+       </select>
         <br><br>
         <input type="submit" value="Valider">
-        <a href="page/tableau.php">voir table</a>
+        <a href="formuliare_entreprise/ajout_entreprise">voir table</a>
     </form>
     <br><br>
   
