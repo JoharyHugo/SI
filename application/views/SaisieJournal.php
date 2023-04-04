@@ -95,6 +95,6 @@
     <a href="<?php echo site_url('journalAchat/verificationBanque');?>">validation journal banque</a>
     <br/>
     <br/>
-    <a href="<?php echo site_url('welcome/upload');?>">upload fichier</a>
+    <a href="<?php echo site_url('welcome/index');?>">upload fichier</a>
 </body>
 </html>

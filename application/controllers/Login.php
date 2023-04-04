@@ -33,11 +33,6 @@ class Login extends CI_Controller {
 		$this->load->view('loginClient');
 	}		
 
-	public function loginAdmin()		// Charge la page login de l'admin
-	{
-		$this->load->view('loginAdmin');
-	}
-
 	public function inscription()		// Charge la page inscription
 	{
 		$this->load->view('formulaire');
@@ -64,28 +59,7 @@ class Login extends CI_Controller {
 		}
 	}
 
-	public function checkLoginAdmin()		// Verifie mot de passe Admin
-	{
-		$this->load->model('login_model');
-
-		$nom = $this->input->post('nom');
-		$mdp = $this->input->post('mdp');
-
-		$test = $this->login_model->checkLoginAdmin($nom, $mdp);
-
-		if ($test == null) {
-			$data['nom'] = $nom;
-			$data['erreur'] = "erreur";
-			$this->load->view('loginAdmin', $data);
-		}
-		else {
-			$this->session->set_userdata('adminId', $test);
-			//redirect("./backOffice/index");
-            redirect("./welcome/accueil");
-
-		}
-	}
-
+	
 	// Inscription nouveau client
 	public function insertNewClient()
 	{

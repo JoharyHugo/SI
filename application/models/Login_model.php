@@ -4,7 +4,7 @@
     class Login_model extends CI_Model {
         public function checkLoginUser($mail, $mdp)
         {
-            $sql = "SELECT * FROM User WHERE mail = '%s' and mdp = '%s'";
+            $sql = "SELECT * FROM Info WHERE Nom = '%s' and mdp = '%s'";
             $sql = sprintf($sql, $mail, $mdp);
 
             $query = $this->db->query($sql);
@@ -14,24 +14,13 @@
             return $row;
         }   
 
-        public function checkLoginAdmin($nom, $mdp)
-        {
-            $sql = "SELECT * FROM Admin WHERE nom = '%s' and mdp = '%s'";
-            $sql = sprintf($sql, $nom, $mdp);
-
-            $query = $this->db->query($sql);
-
-            $row = $query->row_object();
-
-            return $row;
-        }  
         public function getAllEmail()
         {
-           $sql="Select mail from User";
+           $sql="Select Nom from Info";
            $query=$this->db->query($sql);
            $liste=array();
           foreach($query->result_array() as $row){
-            $liste[]=$row['mail'];
+            $liste[]=$row['Nom'];
           }
            return $liste;
         }
@@ -41,7 +30,7 @@
            $tab= $this->Login_model->getAllEmail();
            for ($i=0; $i <count($tab) ; $i++) { 
            if ($tab[$i]==$mail) {
-            throw new Exception("l'Email existe deja ");
+            throw new Exception("le Nom existe deja ");
            }
            }
         }

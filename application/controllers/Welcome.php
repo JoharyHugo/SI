@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('SaisieJournal');
+		$this->load->view('login');
 		
 	}		
 
@@ -58,5 +58,6 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('GrandLivre');
 	}	
+	
 
 }
