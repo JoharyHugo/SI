@@ -92,7 +92,6 @@ class Formulaire_entreprise extends CI_Controller {
         $this->load->view('tableau',$data);
     }
     
-
-	// Add closing brace for class definition
+///controlleres mety
+	
 }
-// Add
