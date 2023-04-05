@@ -8,10 +8,11 @@
     <header>
       <nav>
         <ul>
-          <li><a href="#">Accueil</a></li>
-          <li><a href="#">Journal</a></li>
-          <li><a href="#">Plan Compataple</a></li>
-          <li><a href="#">Plan Tiers</a></li>
+          <li><a href="<?php echo site_url('welcome/accueil'); ?>">Accueil</a></li>
+          <li><a href="<?php echo site_url('welcome/journeaux'); ?>">Code Journal</a></li>
+          <li><a href="<?php echo site_url('welcome/comptable'); ?>">Plan Compatable</a></li>
+          <li><a href="<?php echo site_url('welcome/PlanTiers'); ?>">Plan Tiers</a></li>
+          <li><a href="<?php echo site_url('welcome/journal'); ?>">Journal</a></li>
           <li><a href="#">Grand Livre</a></li>
           <li><a href="#">Balance</a></li>
         </ul>

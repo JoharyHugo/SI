@@ -20,14 +20,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('login');
+		$this->load->view('login');	
 		
 	}		
 
 	public function accueil()
 	{
 	    //$this->load->view('PlanComptable');
-		$this->load->view('SaisieJournal');
+		$this->load->view('accueil');
 	}
 	public function voir()
 	{
@@ -58,6 +58,14 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('GrandLivre');
 	}	
-	
+
+	public function PlanTiers()
+	{
+		$this->load->view('PlanTiers');
+	}	
+	public function Journeaux()
+	{
+		$this->load->view('Journeaux');
+	}	
 
 }
