@@ -20,7 +20,8 @@
             <input type="text" name="intitule" id="intitule">
             <br><br>
             <input type="submit" value="Valider">
+            <a href="<?php echo site_url('planTiers/getAllTiers'); ?>" style="margin-top: 20px;">voir plus</a>
     </form>
-    <a href="<?php echo site_url('planTiers/getAllTiers'); ?>">voir plus</a>
+    
 </body>
 </html>

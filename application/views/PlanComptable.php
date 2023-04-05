@@ -17,7 +17,13 @@
             <input type="text" name="nom" id="nom">
             <br><br>
             <input type="submit" value="Valider">
+            <a href="<?php echo site_url('planComptable/getAllComptables'); ?>" style="margin-top: 20px;">voir planComptable</a>
     </form>
-    <a href="<?php echo site_url('planComptable/getAllComptables'); ?>">voir planComptable</a>
+    <form action="#" method="get" style="margin-top: 180px; background-color:white;">
+    <center><h1>Plan Comptable avec CSV</h1></center>
+    <label for="csv"> Votre CSV :</label>
+    <input type="FILE" name="csv" id="csv">
+    <input type="submit" value="Valider">
+    </form>
 </body>
 </html>

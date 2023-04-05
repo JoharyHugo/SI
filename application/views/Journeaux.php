@@ -53,6 +53,7 @@
 					</button>
 				</div>
 			</form>
+			<a href="#" style="margin-top: 385px;color:blue"> Voir tableau</a>
 		</div>
 	</div>
 
