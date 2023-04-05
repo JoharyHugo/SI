@@ -9,7 +9,20 @@
     <title>Journal</title>
 </head>
 <body style="background-image: url('<?php echo base_url("assets/images/journal.jpg"); ?>'); background-repeat: no-repeat;">
-    <center><h2 style="margin-top: 50px;">Saisiser votre Journal</h2></center>
+<header>
+      <nav>
+        <ul>
+          <li><a href="<?php echo site_url('journalAchat/verification');?>">voir grand livre</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationBalance');?>">voir la balance</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationachat');?>">Journal Achat</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationVente');?>">Journal vente</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationBanque');?>">Journal banque</a></li>
+        </ul>
+      </nav>
+</header>    
+
+
+<center><h2 style="margin-top: 50px;">Saisiser votre Journal</h2></center>
     <br>
     <hr>
 <div class="container sp1">
@@ -62,39 +75,8 @@
             </div>
            
             <div class="col-md-6" >
-            <table class="normal" border="1">
-                <tr>
-                    <th>Numero de Compte</th>
-                    <th>Nom de Compte</th>
-                </tr>
-                <tr>
-                    <td>401</td>
-                    <td>Fournisseur</td>
-                </tr>
-              </table>  
             </div>
         </div>    
 </div>
-
-  
-<a href="<?php echo site_url('welcome/grandLivre');?>">voir grand livre</a>
-    <br/>
-    <br/>
-    <a href="<?php echo site_url('welcome/balance');?>">voir la balance</a>
-    <br/>
-    <br/>
-    <a href="<?php echo site_url('journalAchat/verification');?>">validation  journal temporaire </a>
-    <br/>
-    <br/>
-    <a href="<?php echo site_url('journalAchat/verificationachat');?>">validation journal Achat</a>
-    <br/>
-    <br/>
-    <a href="<?php echo site_url('journalAchat/verificationVente');?>">validation journal vente</a>
-    <br/>
-    <br/>
-    <a href="<?php echo site_url('journalAchat/verificationBanque');?>">validation journal banque</a>
-    <br/>
-    <br/>
-    <a href="<?php echo site_url('welcome/index');?>">upload fichier</a>
 </body>
 </html>

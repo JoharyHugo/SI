@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/css/GrandLivre.css"); ?>">
     <title>GrandLivre</title>
 </head>
+
 <body>
 <h2>Grand Livre</h2>
 <div class="table-wrapper">
@@ -24,29 +25,23 @@
         </tr>
         </thead>
         <tbody>
+        <?php  for ($i=0; $i < count($reponse); $i++) { ?>
         <tr>
-            <td>AN</td>
-            <td>01/01/2023</td>
-            <td>35</td>
-            <td>BOA546165</td>
-            <td>60</td>
-            <td>Achat voiture</td>
-            <td>30000</td>
-            <td>30000</td>
+            <td><?php  echo $reponse[$i]['PieceReference']; ?></td>
+            <td><?php echo $reponse[$i]['date']; ?></td>
+            <td><?php  echo $reponse[$i]['numeroPiece']; ?></td>
+            <td><?php  echo $reponse[$i]['PieceReference']; ?></td>
+            <td><?php echo $reponse[$i]['CompteTiers']; ?></td>
+            <td><?php echo $reponse[$i]['Libelle']; ?></td>
+            <td><?php echo $reponse[$i]['debit']; ?></td>
+            <td><?php echo $reponse[$i]['credit']; ?></td>       
         </tr>
-        <tr>
-            <td>Client</td>
-            <td>01/01/2023</td>
-            <td>42</td>
-            <td>BOA546165</td>
-            <td>41</td>
-            <td>Vente voiture</td>
-            <td>30000</td>
-            <td>30000</td>
-        </tr>
-       
+        <?php }?>
+
         <tbody>
     </table>
+    
+    <a href="<?php echo site_url("journalAchat/total3/");?>">voir total</a> 
 </div>
 </body>
 </html>

@@ -53,12 +53,9 @@
 					</button>
 				</div>
 			</form>
-			<a href="#" style="margin-top: 385px;color:blue"> Voir tableau</a>
+			<a href="<?php echo site_url('journau/getAllJournaux'); ?>" style="margin-top: 385px;color:blue"> Voir tableau</a>
 		</div>
 	</div>
-
-
-    <a href="<?php echo site_url('journau/getAllJournaux'); ?>">voir code Journeaux</a>
 
 
 <!--===============================================================================================-->

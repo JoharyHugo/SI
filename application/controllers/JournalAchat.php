@@ -9,19 +9,6 @@ class JournalAchat extends CI_Controller {
         if(!$this->session->has_userdata('adminId')) redirect("./login/loginAdmin");
     }
     */
-    /*public function index($erreur = null)
-    {
-        $this->load->model('PlanComptable_model', 'model');
-        $data['content'] = "backOffice";
-        $data['header'] = "headerAdmin";
-        $data['title'] = "BackOffice page";
-        $data['categories'] = $this->model->getAllCategories();
-		$nombre1=$this->model->getNumberUser();
-        $nombre2=$this->model->getNumberEchange();
-        $data['nombre1']=$nombre1;
-        $data['nombre2']=$nombre2;
-        $this->load->view('template', $data);
-    }*/
 
     public function newJournalAchat() {
         $this->load->model('JournalAchat_model', 'model');
@@ -57,19 +44,32 @@ class JournalAchat extends CI_Controller {
     public function verification()
     {
         $this->load->model('JournalAchat_model', 'model');
-        $this->model->verificationSomme();
+        $this->model->verificationSommeLivre();
         $val=$this->model->getAllJournalAchat();
         $data['reponse'] = $val;
         //var_dump($valiny);
-        $this->load->view('JourneauxAffichage',$data);
+        $this->load->view('grandLivre',$data);
         //redirect("./welcome/balance");
                 
     }
     
+
+    public function verificationBalance()
+    {
+        $this->load->model('JournalAchat_model', 'model');
+        $this->model->verificationSommeLivre();
+        $val=$this->model->getAllJournalAchat();
+        $data['reponse'] = $val;
+        //var_dump($valiny);
+        $this->load->view('Balance',$data);
+        //redirect("./welcome/balance");
+                
+    }
+
     public function verificationAchat()
     {
         $this->load->model('JournalAchat_model', 'model');
-        $this->model->verificationSomme();
+        $this->model->verificationSommeAchat();
         $val=$this->model->getJournalAchatValider();
         $data['reponse'] = $val;
         //var_dump($valiny);
@@ -81,11 +81,11 @@ class JournalAchat extends CI_Controller {
     public function verificationVente()
     {
         $this->load->model('JournalAchat_model', 'model');
-        $this->model->verificationSomme();
+        $this->model->verificationSommeVente();
         $val=$this->model->getJournalVenteValider();
         $data['reponse'] = $val;
         //var_dump($valiny);
-        $this->load->view('JourneauxAffichage',$data);
+        $this->load->view('JourneauxAffichage3',$data);
         //redirect("./welcome/balance");
                 
     }
@@ -93,11 +93,11 @@ class JournalAchat extends CI_Controller {
     public function verificationBanque()
     {
         $this->load->model('JournalAchat_model', 'model');
-        $this->model->verificationSomme();
+        $this->model->verificationSommeBanque();
         $val=$this->model->getJournalBanqueValider();
         $data['reponse'] = $val;
         //var_dump($valiny);
-        $this->load->view('JourneauxAffichage',$data);
+        $this->load->view('JourneauxAffichage2',$data);
         //redirect("./welcome/balance");
                 
     }
@@ -106,46 +106,38 @@ class JournalAchat extends CI_Controller {
     {
         $this->load->model('JournalAchat_model', 'model');
         $rep=$this->model->getJournalAchat('Achat');
-        $rep=$this->model->getJournalAchat('Achat');
-        $rep=$this->model->getJournalAchat('Achat');
+        $ver=$this->model->verificationSommeAchat();
         $valiny['journal'] = $rep;
         $this->load->view('Total',$valiny);
     }
-    
-
-    /*public function getAllTiers()
+    public function total1()
     {
-        $this->load->model('PlanTiers_model','model');
-        $val=$this->model->getAllTiers();
-        $data['reponse'] = $val;
-        $this->load->view('Plus',$data);
+        $this->load->model('JournalAchat_model', 'model');
+        $rep=$this->model->getJournalVente('Vente');
+        $this->model->verificationSommeVente();
+        $valiny['journal'] = $rep;
+        $this->load->view('Total1',$valiny);
     }
-    public function getOneTiers($id)
+    public function total2()
     {
-        $this->load->model('PlanTiers_model','model');
-        $val=$this->model->getTiers($id);
-        $data['datas'] = $val;
-        $this->load->view('ModifierTiers',$data);   
+        $this->load->model('JournalAchat_model', 'model');
+        $rep=$this->model->getJournalBanque('Banque');
+        $ver=$this->model->verificationSommeBanque();
+        $valiny['journal'] = $rep;
+        $this->load->view('Total2',$valiny);
     }
-    public function deleteTiers($id)
+  
+    public function total3()
     {
-        $this->load->model("PlanTiers_model", "model");
-        $this->model->supprimerTiers($id);
+        $this->load->model('JournalAchat_model', 'model');
+        $val=$this->model->getTotal();
+        $ver=$this->model->verificationSommeLivre();
+        $data['journal'] = $val;
+        $this->load->view('Total3',$data);
 
-        $this->load->view('PlanTiers');
-        //redirect("./welcome/voir");
-    }
+                
+    }  
 
-    public function updatePlanTiers() {
-        $this->load->model('PlanTiers_model', 'model');
-        $type = $this->input->post('type');
-        $numero= $this->input->post('numero');
-        $intitule= $this->input->post('intitule');
-        $id= $this->input->post('id');
-        
-        $this->model->modifierTiers($id, $type, $numero, $intitule);
-        $this->load->view('PlanTiers');
-    }*/
 }
 
 ?>

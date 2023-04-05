@@ -9,12 +9,12 @@
       <nav>
         <ul>
           <li><a href="<?php echo base_url("welcome/bienvennue"); ?>">Accueil</a></li>
-          <li><a href="<?php echo base_url("welcome/accueil"); ?>">Journal</a></li>
+          <li><a href="<?php echo base_url("welcome/journal"); ?>">Journal</a></li>
           <li><a href="<?php echo base_url("welcome/comptable"); ?>">Plan Comptable</a></li>
           <li><a href="<?php echo base_url("welcome/codeJournaux"); ?>"> CodeJourneau</a></li>
           <li><a href="<?php echo base_url("welcome/tiers"); ?>">Plan Tiers</a></li>
-          <li><a href="<?php echo base_url("welcome/grandLivre"); ?>">Grand Livre</a></li>
-          <li><a href="<?php echo base_url("welcome/bienvennue"); ?>">Balance</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verification');?>">Grand Livre</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationBalance');?>">Balance</a></li>
         </ul>
       </nav>
     </header>

@@ -140,3 +140,4 @@ CREATE TABLE BanqueJournal(
 );
 DROP  TABLE Info;
 DROP TABLE Plan_Comptable;
+ create or replace view total as SELECT SUM(debit) AS totalDebit, SUM(credit) AS totalCredit FROM journalTemporaire;
