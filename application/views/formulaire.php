@@ -61,9 +61,8 @@
        </select>
         <br><br>
         <input type='submit' value='Valider' name='upload'>
-        <a href="page/tableau.php">voir table</a>
+        <a href="<?php echo site_url("formulaire_entreprise/getAllInfo/"); ?>">voir table</a>
     </form>
     <br><br>
-  
 </body>
 </html>

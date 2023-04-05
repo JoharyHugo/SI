@@ -30,7 +30,7 @@ class Formulaire_entreprise extends CI_Controller {
 				if ($this->upload->do_upload('logo')) {
 					$uploadData = $this->upload->data();
 					$filename = $uploadData['file_name'];
-					$data['response'] = 'successfully uploaded ' . $filename;
+					$data['response'] = " " . $filename;
 				} else {
 					$data['response'] = 'failed';
 				}
@@ -41,13 +41,14 @@ class Formulaire_entreprise extends CI_Controller {
 			if ($this->upload->do_upload('status')) {
 				$uploadData = $this->upload->data();
 				$filename1 = $uploadData['file_name'];
-				$data1['reponse'] = 'successfully uploaded ' . $filename1;
+				$data1['reponse'] = " " . $filename1;
 			} else {
 				$data1['reponse'] = 'failed';
 			}
 
-			$this->load->view('upload', $data);
-			$this->load->view('upload', $data1); // Load both views for the file uploads
+			$this->load->view('accueil',$data);
+			//$this->load->view('upload', $data);
+			//$this->load->view('upload', $data1); // Load both views for the file uploads
 		} else {
 			$this->load->view('upload');
 		}
@@ -70,10 +71,27 @@ class Formulaire_entreprise extends CI_Controller {
 
 		$id=null;
 		// Pass both $data and $data1 to the model method
-		$this->model->insertion($id,$nom, $objet, $siege, $adresse, $data, $dirigeant, $mdp, $fiscal, $statistique, $registre, $data1, $debut, $devise, $equivalence);
-
-		$this->load->view("formulaire");
+		$this->model->insertion($id,$nom, $objet, $siege, $adresse,  $dirigeant,$data['response'] , $mdp, $fiscal, $statistique, $registre, $data1['reponse'] , $debut, $devise, $equivalence);
 	}
+
+
+	
+    public function getOneInfo($id)
+    {
+        $this->load->model('formulair_societe','model');
+        $val=$this->model->getInfo($id);
+        $data['datas'] = $val;
+        $this->load->view('accueil',$data);   
+    }
+
+	public function getAllInfo()
+    {
+        $this->load->model('formulair_societe','model');
+        $val=$this->model->getAllInfo();
+        $data['reponse'] = $val;
+        $this->load->view('tableau',$data);
+    }
+    
 
 	// Add closing brace for class definition
 }

@@ -40,7 +40,7 @@ class Welcome extends CI_Controller {
 	}
 	public function codeJournaux()
 	{
-		$this->load->view('CodeJourneau');
+		$this->load->view('Journeaux');
 	}
 	public function formulaire()
 	{
@@ -58,6 +58,12 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('GrandLivre');
 	}	
-	
-
+	public function bienvennue()
+	{
+		$this->load->view('accueil');
+	}
+	public function tiers()
+	{
+		$this->load->view('PlanTiers');
+	}
 }

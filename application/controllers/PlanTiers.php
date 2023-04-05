@@ -44,6 +44,7 @@ class PlanTiers extends CI_Controller {
         $data['reponse'] = $val;
         $this->load->view('tablePlanTiers',$data);
     }
+    
     public function getOneTiers($id)
     {
         $this->load->model('PlanTiers_model','model');

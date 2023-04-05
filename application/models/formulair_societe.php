@@ -17,5 +17,25 @@ class formulair_societe extends CI_Model{
 			throw new Exception($e->getMessage());			
 		}
 	}
+
+
+	public function getInfo($id){
+		$sql = "SELECT * FROM Info WHERE id = %d";
+		$sql = sprintf($sql, $id);
+		echo $sql;
+		$query = $this->db->query($sql);
+		$liste = $query->row_array();
+		return $liste;
+	}
+
+	public function getAllInfo(){
+		$sql = "SELECT * FROM Info";
+		$query=$this->db->query($sql);
+		$liste=array();
+	   foreach($query->result_array() as $row){
+		 $liste[]=$row;
+	   }
+		return $liste;
+	} 
 }
 ?> 
