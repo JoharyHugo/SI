@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/actif.css"); ?>">
-    <title>Actif</title>
+    <title>Passif</title>
 </head>
 <body>
    <div class="container">
     <table>
         <thead>
           <tr>
-            <th >Actif</th>
+            <th >Passif</th>
             <th>Compte</th>
             <th colspan="3">Date Fin exercice N</th>
             <th>Date Fin exercice N-1</th>
@@ -60,7 +60,7 @@
             <td>Ligne 1, colonne 3</td>
           </tr>
           <tr>
-            <td colspan="6">Total Actif Non Courants</td>
+            <td colspan="6">Total Passif Non Courants</td>
           </tr>
           <tr>
             <td>Ligne 3, colonne 1</td>
@@ -71,10 +71,10 @@
             <td>Ligne 1, colonne 3</td>
           </tr>
           <tr>
-            <td colspan="6">Total Actif  Courants</td>
+            <td colspan="6">Total Passif  Courants</td>
           </tr>
           <tr>
-            <td colspan="6">Total  des Actifs</td>
+            <td colspan="6">Total  des Passifs</td>
           </tr>
         </tbody>
       </table>
