@@ -60,7 +60,7 @@
             <td>Ligne 1, colonne 3</td>
           </tr>
           <tr>
-            <td colspan="6">Total Passif Non Courants</td>
+            <td colspan="6">Total Passif Non Courants </td> <!-- balise Span + style=float:right-- >
           </tr>
           <tr>
             <td>Ligne 3, colonne 1</td>
