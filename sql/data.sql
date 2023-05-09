@@ -95,7 +95,7 @@ CREATE TABLE JournalTemporaire(
 );
 
 CREATE TABLE AchatJournal(
-    idAchat INT AUTO_INCREMENT PRIMARY KEY,
+         INT AUTO_INCREMENT PRIMARY KEY,
     date INT,
     numeroPiece VARCHAR(20),
     PieceReference VARCHAR(20),
