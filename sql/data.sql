@@ -150,23 +150,23 @@ CREATE TABLE NatureCharge(
     idNatureCharge INT AUTO_INCREMENT PRIMARY KEY,
     NatureCharge VARCHAR(20)
 );
-CREATE TABLE Charge(
-    idCharge INT AUTO_INCREMENT PRIMARY KEY,
-    Rubrique VARCHAR(20),
-    Total DOUBLE,
-    Unite VARCHAR(20),
+CREATE TABLE detailCharge(
+    idAchat INT,
     idNatureCharge INT,
     idtypeCharge INT,
+    FOREIGN KEY (idAchat) REFERENCES AchatJournal(idAchat),
     FOREIGN KEY (idNatureCharge) REFERENCES NatureCharge(idNatureCharge),
     FOREIGN KEY (idtypeCharge) REFERENCES TypeCharge(idtypeCharge)
 );
 CREATE TABLE ChargeCentre(
-    idCharge INT,
+    idAchat INT,
     idCentre INT,
     pourcentage DOUBLE,
-    FOREIGN KEY (idCharge) REFERENCES Charge(idCharge),
+    FOREIGN KEY (idAchat) REFERENCES AchatJournal(idAchat),
     FOREIGN KEY (idCentre) REFERENCES Centre (idCentre)
 );
+DROP TABLE ChargeCentre;
+DROP TABLE Charge;
 DROP  TABLE Info;
 DROP TABLE Plan_Comptable;
  create or replace view total as SELECT SUM(debit) AS totalDebit, SUM(credit) AS totalCredit FROM journalTemporaire;
