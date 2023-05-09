@@ -1,6 +1,6 @@
 <?php 
  if (! defined('BASEPATH')) exit('No direct script access allowed');
-class Achat extends CI_Model{
+class Achat_model extends CI_Model{
     
     public function getlastAchat(){
         $sql="SELECT * FROM AchatJournal ORDER BY idAchat DESC LIMIT 1";
@@ -61,6 +61,26 @@ class Achat extends CI_Model{
           $liste[]=$row;
         }
         return $liste;
+    }
+    public function getAchatid($id){
+        $sql="SELECT * FROM AchatJournal WHERE idAchat=%d";
+        $sql=sprintf($sql,$id);
+        $query=$this->db->query($sql);
+        $info= $query->row_array();
+        return $info;
+    }
+    public function insertCentreAchat($idAchat,$idCentre,$pourcentage,$prix){
+        $sql="INSERT INTO ChargeCentre VALUES (%d,%d,%d,%d)";
+        $sql=sprintf($sql,$idAchat,$idCentre,$pourcentage,$prix);
+        try {
+            //echo $sql;
+            $this->db->query($sql);
+        } 
+        catch (Exception $th) 
+        {
+            throw new Exception($th->getMessage());
+            echo $th->getMessage();
+        }
     }
 }
 ?>
