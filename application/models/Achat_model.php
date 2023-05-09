@@ -34,5 +34,33 @@ class Achat extends CI_Model{
             echo $th->getMessage();
         }
     }
+    public function getAllNature(){
+        $sql="SELECT * FROM NatureCharge";
+        $query=$this->db->query($sql);
+        $liste=array();
+        foreach($query->result_array() as $row){
+          $liste[]=$row;
+        }
+        return $liste;
+    }
+    public function getAllType(){
+        $sql="SELECT * FROM TypeCharge";
+        $query=$this->db->query($sql);
+        $liste=array();
+        foreach($query->result_array() as $row){
+          $liste[]=$row;
+        }
+        return $liste;
+    }
+    public function getAllCentre()
+    {
+        $sql="SELECT * FROM Centre";
+        $query=$this->db->query($sql);
+        $liste=array();
+        foreach($query->result_array() as $row){
+          $liste[]=$row;
+        }
+        return $liste;
+    }
 }
 ?>
