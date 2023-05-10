@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<form action="#" method="post">
+<form action="<?php echo site_url("Achat/insertionChargedetail"); ?>" method="post">
   <div>
     
     <div class="radio-inputs">
@@ -31,8 +31,20 @@
     </select>
   </div>
   <div>
-    <input type="hidden" name="idAchat" value="<?php echo $info ['idAchat']; ?>">
-    
+  <label for="prix">Prix Unitaire</label>
+  <input type="number" name="prix" id="prix">
+  </div>
+  <div>
+  <label for="quantite">Quantite</label>
+  <input type="number" name="quantite" id="quantite">
+  </div>
+  <div>
+  <label for="unite">Unite</label>
+  <input type="text" name="unite" id="unite">
+  </div>
+  <div>
+    <input type="hidden" name="idAchat" value="<?php echo $info ['idAchat']; ?>"><br><br>
+   
   </div>
   <input type="submit" value="Valider">
 </form>

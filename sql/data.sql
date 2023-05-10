@@ -154,6 +154,8 @@ CREATE TABLE detailCharge(
     idAchat INT,
     idNatureCharge INT,
     idtypeCharge INT,
+    quantite INT,
+    prix DOUBLE,
     FOREIGN KEY (idAchat) REFERENCES AchatJournal(idAchat),
     FOREIGN KEY (idNatureCharge) REFERENCES NatureCharge(idNatureCharge),
     FOREIGN KEY (idtypeCharge) REFERENCES TypeCharge(idtypeCharge)
@@ -162,6 +164,7 @@ CREATE TABLE ChargeCentre(
     idAchat INT,
     idCentre INT,
     pourcentage DOUBLE,
+    prix DOUBLE,
     FOREIGN KEY (idAchat) REFERENCES AchatJournal(idAchat),
     FOREIGN KEY (idCentre) REFERENCES Centre (idCentre)
 );
@@ -170,3 +173,9 @@ DROP TABLE Charge;
 DROP  TABLE Info;
 DROP TABLE Plan_Comptable;
  create or replace view total as SELECT SUM(debit) AS totalDebit, SUM(credit) AS totalCredit FROM journalTemporaire;
+insert into NatureCharge VALUES(null,'Incorporable');
+insert into NatureCharge VALUES(null,'Non incorporable');
+
+insert into TypeCharge VALUES(null,'Fixe');
+insert into TypeCharge VALUES(null,'Variable');
+insert into AchatJournal (idAchat,Libelle)VALUES (null,'Essence');
