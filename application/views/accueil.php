@@ -25,6 +25,8 @@
           <li>Nom:</li>
           <li>Logo:</li>
           <li>Adresse:</li>
+          <a href="<?php echo site_url("Achat/achatAnalyse") ?>">Achat Detail</a>
+   
         </ul>
         
       </div>

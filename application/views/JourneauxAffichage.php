@@ -47,8 +47,7 @@
         <?php }?>
     </table>
     <a href="<?php echo site_url("journalAchat/total/");?>">voir total</a>        
-          
-            </div>
+    </div>
            
          
         </div>
