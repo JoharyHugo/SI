@@ -78,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        
 
         public function csv_base(){
-        	$csv_file_path = 'C:\UwAmp\www\SI\application\Upload\PCG-ECRITURE.csv'; // Spécifiez le chemin d'accès complet du fichier CSV
+        	$csv_file_path = 'C:\Users\itu\Downloads\document S4\MR ROJO\systeme information\UwAmp\www\SI\application\Upload\PCG-ECRITURE.csv'; // Spécifiez le chemin d'accès complet du fichier CSV
 
 	        $csv_content = read_file($csv_file_path); // Lire le contenu du fichier CSV
 
@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         	$size = 0;
 
-			$csv_data = [];
+			$csv_data = array();
 			foreach($lines as $line) {
     			$csv_data[] = str_getcsv($line, ';'); // Conversion de chaque ligne en tableau
     			$size++;
@@ -103,6 +103,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     				'Nom' => $csv_data[$i][1],
     			);
     			$this->db->insert('Plan_comptable', $data);
+				
 			}
-		}		
+			echo "insertion mety";
+		}
+		
+		
+		public function csv_baseEcriture(){
+        	$csv_file_path = 'C:\Users\itu\Downloads\document S4\MR ROJO\systeme information\UwAmp\www\SI\application\Upload\PCG-ECRITURE3.csv'; // Spécifiez le chemin d'accès complet du fichier CSV
+
+	        $csv_content = read_file($csv_file_path); // Lire le contenu du fichier CSV
+
+    	    // $csv_array = csv_to_array($csv_content); // Convertir le contenu du fichier CSV en un tableau associatif
+
+        	// var_dump($csv_array); // Afficher le contenu du fichier CSV sous forme de tableau
+
+        	$lines = explode(PHP_EOL, $csv_content); // Séparation des lignes
+
+        	$size = 0;
+
+			$csv_data = array();
+			foreach($lines as $line) {
+    			$csv_data[] = str_getcsv($line, ';'); // Conversion de chaque ligne en tableau
+    			$size++;
+			}
+
+			for ($i = 1; $i < 48 ; $i++) { 
+				$this->load->database();
+    			$data = array(
+    				'Date' => $csv_data[$i][0],
+    				'ref_piece' => $csv_data[$i][1],
+					'compte' => $csv_data[$i][2],
+					'tiers' => $csv_data[$i][3],
+					'intitule' => $csv_data[$i][4],
+					'Libelle' => $csv_data[$i][5],
+					'debit' => $csv_data[$i][6],
+					'credit' => $csv_data[$i][7],
+    			);
+    			$this->db->insert('JournalTemporaireEcriture', $data);
+				
+			}
+			echo "insertion mety";
+		}
 	}

@@ -17,8 +17,7 @@
             <th>Code Journal</th>
             <th>Date</th>
             <th>Numero Piece</th>
-            <th>Reference Piece</th>
-            <th>Numero Compte</th>
+            <th>Compte</th>
             <th>Libellé Ecriture</th>
             <th>Debit</th>
             <th>Credit</th>
@@ -27,11 +26,10 @@
         <tbody>
         <?php  for ($i=0; $i < count($reponse); $i++) { ?>
         <tr>
-            <td><?php  echo $reponse[$i]['PieceReference']; ?></td>
+            <td><?php  echo $reponse[$i]['ref_piece']; ?></td>
             <td><?php echo $reponse[$i]['date']; ?></td>
-            <td><?php  echo $reponse[$i]['numeroPiece']; ?></td>
-            <td><?php  echo $reponse[$i]['PieceReference']; ?></td>
-            <td><?php echo $reponse[$i]['CompteTiers']; ?></td>
+            <td><?php  echo $reponse[$i]['ref_piece']; ?></td>
+            <td><?php echo $reponse[$i]['compte']; ?></td>
             <td><?php echo $reponse[$i]['Libelle']; ?></td>
             <td><?php echo $reponse[$i]['debit']; ?></td>
             <td><?php echo $reponse[$i]['credit']; ?></td>       

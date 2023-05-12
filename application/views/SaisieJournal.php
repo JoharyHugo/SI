@@ -13,10 +13,20 @@
       <nav>
         <ul>
           <li><a href="<?php echo site_url('journalAchat/verification');?>">voir grand livre</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationJournal');?>">voir journal a nouveau</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationJournalBalance');?>">voir la balance ecriture</a></li>
           <li><a href="<?php echo site_url('journalAchat/verificationBalance');?>">voir la balance</a></li>
-          <li><a href="<?php echo site_url('journalAchat/verificationachat');?>">Journal Achat</a></li>
-          <li><a href="<?php echo site_url('journalAchat/verificationVente');?>">Journal vente</a></li>
-          <li><a href="<?php echo site_url('journalAchat/verificationBanque');?>">Journal banque</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationTotalAchat');?>">Journal Achat</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationTotalVente');?>">Journal vente</a></li>
+          <li><a href="<?php echo site_url('journalAchat/verificationTotalBanque');?>">Journal banque</a></li>
+          <li><a href="<?php echo site_url('journalAchat/exportPdf');?>">exportPdf</a></li>
+          <li><a href="<?php echo site_url('journalAchat/tableauPdf');?>">TableauPdf</a></li>
+          <li><a href="<?php echo site_url('journalAchat/tableauPdf1');?>">TableauPdf1</a></li>
+          <li><a href="<?php echo site_url('balance/Actif');?>">Compte Actif</a></li>
+          <li><a href="<?php echo site_url('balance/Passif');?>">Compte Passif</a></li>
+          <li><a href="<?php echo site_url('balance/Resultat');?>">Compte de resultat</a></li>
+          <li><a href="<?php echo site_url('journalAchat/seuil_rentabilite');?>">voir seuil de rentabilité</a></li>
+          
         </ul>
       </nav>
 </header>    

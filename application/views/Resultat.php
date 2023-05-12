@@ -6,7 +6,13 @@
   <link rel="stylesheet" href="<?php echo base_url("assets/css/resultat.css"); ?>">
 
 </head>
-<body>
+<body style="background-image: url('<?php echo base_url("assets/images/img2.jpg"); ?>'); background-size: cover;;background-repeat: no-repeat; ">
+    <center><h2 style="margin-top: 50px;">COMPTE DE RESULTAT</h2></center>
+   <center> <p>(par nature)</p>
+    <p>Periode du ............... AU ................</p>
+        <p>Unite monetaire:ARIARY</p></center>
+    <br>
+    <hr>
 <!-- partial:index.partial.html -->
 <table>
   <thead>
@@ -17,17 +23,17 @@
       <th>Date Fin Exercice N-1
   </thead>
   <tbody>
-    <tr>
-      <td>1
-      <td>Malcolm
-      <td>Reynolds
-      <td>Mal, Cap'n
+    <tr> 
+      <td>Chiffre d'affaires</td>    
+      <td>72</td>         
+      <td>
+      <td>
       
     <tr>
-      <td>2
-      <td>Zoe
-      <td>Washburn
-      <td>Zoe
+      <td>Production stockes
+      <td>71
+      <td>
+      <td>
       
         <tr>
           <td>Production de l'exercice
@@ -37,60 +43,145 @@
           
     
     <tr>
-      <td>3
-      <td>Hoban
-      <td>Washburn
-      <td>Wash
+      <td>Achats consommes
+      <td>60
+      <td>
+      <td>
         <tr>
           <td>Consommation de l'exercice
           <td colspan="3">
           <td>
           <td>
     <tr>
-      <td>4
-      <td>Kaylee
-      <td>Frye
-      <td>Kaylee
+      <td>Services exterieurs et autres consommations
+      <td>61/62
+      <td>
+      <td>
         <tr>
-          <td>Valeur Ajouter d'exploitation
+          <td>CONSOMMATION DE L'EXERCICE
           <td colspan="3">
           <td>
           <td>
-    <tr>
-      <td>5
-      <td>Jayne
-      <td>Cobb
-      <td>Jayne
-        <tr>
-          <td> EXCEDENT BRUT D’EXPLOITATION 
+       <tr>
+          <td> VALEUR AJOUTEE D'EXPLOITATION(1-2) 
           <td colspan="3">
           <td>
           <td>
         <tr>
-          <td>6
-          <td>Jayne
-          <td>Cobb
-          <td>Jayne
+          <td>Charges personnels
+          <td>64
+          <td>
+          <td>
+          <tr>
+          <td>Impots , taxes et versements assimiles
+          <td>63
+          <td>
+          <td>
             <tr>
-          <td>Resultat Operationnel
+          <td>EXCEDENT BRUT D'EXPLOITATION
            <td colspan="3">
              <td>
              <td>
             <tr>
-                  <td>6
-                  <td>Jayne
-                  <td>Cobb
-                  <td>Jayne
+                  <td>Autres produits operationnels
+                  <td>74
+                  <td>
+                  <td>
+                    
+            <tr>    
+                  <td>Autres charges operationnels
+                  <td>65
+                  <td>
+                  <td>
+                <tr>
+                  <td>Dotations aux amortissements,aux provisions et pertes de valeur
+                  <td>68
+                  <td>
+                  <td>
+                   
+                <tr>
+                  <td>Reprise sur provisions et pertes de valeurs
+                  <td>78
+                  <td>
+                  <td>
+                   
                     <tr>
-                      <td> Resultat Financier 
+                      <td> RESULTAT OPERATIONNEL
+                      <td colspan="3">
+                      <td>
+                      <td>
+                <tr>
+                  <td>Produits financiers
+                  <td>76
+                  <td>
+                  <td>
+
+                  <tr>
+                  <td>Charges financieres
+                  <td>66
+                  <td>
+                  <td>
+                  <tr>
+                      <td> RESULTAT FINANCIER
                       <td colspan="3">
                       <td>
                       <td>
                       <tr>
-                          <td> Resultat Avnt Impot
+                      <td>RESULTAT AVANT IMPOTS(5+6)
+                      <td colspan="3">
+                      <td>
+                      <td>
+                        
+                  <tr>
+                  <td>Impots exigibles sur resultats
+                  <td>695
+                  <td>
+                  <td>
+                    
+                  <tr>
+                  <td>Impots differes(Variations)
+                  <td>692
+                  <td>
+                  <td>
+                      <tr>
+                          <td> TOTAL DES PRODUITS DES ACTIVITES ORDINAIRES
                           <td colspan="3">
                           <td>
                           <td>
+                            
+                      <tr>
+                          <td>TOTAL DES CHARGES DES ACTIVITES ORDINAIRES
+                          <td colspan="3">
+                          <td>
+                          <td>
+                            
+                      <tr>
+                          <td>RESULTAT NET DES ACTIVITES ORDINAIRES
+                          <td colspan="3">
+                          <td>
+                          <td>
+                <tr>
+                  <td>Elements extraordinaires(produits)
+                  <td>77
+                  <td>
+                  <td>
+                <tr>
+                  <td>Elements extraordinaires(charges)
+                  <td>67
+                  <td>
+                  <td>
+                 
+                  <tr>
+                          <td> RESULTAT EXTRAORDINAIRE
+                          <td colspan="3">
+                          <td>
+                          <td>                            
+                
+                      <tr>
+                          <td> RESULTAT DE L'EXERCICE
+                          <td colspan="3">
+                          <td>
+                          <td>                            
   </tbody>
 </table>
 <!-- partial -->

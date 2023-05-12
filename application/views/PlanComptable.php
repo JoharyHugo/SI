@@ -25,5 +25,6 @@
     <input type="FILE" name="csv" id="csv">
     <input type="submit" value="Valider">
     </form>
+    <a href="<?php echo site_url('csv/csv_baseEcriture'); ?>">insertion csv</a>
 </body>
 </html>

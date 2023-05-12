@@ -12,6 +12,7 @@
     <center><h2 style="margin-top: 50px;">Votre Journal</h2></center>
     <br>
     <hr>
+    <?php // echo $total ; ?>
 <div class="container sp1" style="margin-right: 400px;">
         
         <div class="row cont" style="width: 1700px;">

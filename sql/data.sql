@@ -94,19 +94,33 @@ CREATE TABLE JournalTemporaire(
     Montant DOUBLE
 );
 
+
+CREATE TABLE JournalTemporaireEcriture(
+    idJournal INT AUTO_INCREMENT PRIMARY KEY,
+    date VARCHAR(20),
+    ref_piece VARCHAR(20),
+    compte INT,
+    tiers VARCHAR(20),
+    Intitule VARCHAR(50),
+    Libelle VARCHAR(50),
+    debit DOUBLE,
+    credit DOUBLE
+);
+
 CREATE TABLE AchatJournal(
     idAchat INT AUTO_INCREMENT PRIMARY KEY,
-    date INT,
-    numeroPiece VARCHAR(20),
-    PieceReference VARCHAR(20),
+    date VARCHAR(20),
+    ref_piece VARCHAR(20),
+    compte INT,
+    tiers VARCHAR(20),
+    Intitule VARCHAR(50),
+    Libelle VARCHAR(50),
+    debit DOUBLE,
+    credit DOUBLE
     idCompteGenerale INT,
     FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
     idCompteTiers INT,
     FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
-    Libelle VARCHAR(35),
-    debit DOUBLE,
-    credit DOUBLE,
-    devise DOUBLE
 );
 
 CREATE TABLE VenteJournal(
@@ -122,6 +136,17 @@ CREATE TABLE VenteJournal(
     debit DOUBLE,
     credit DOUBLE,
     devise DOUBLE
+);
+
+create table Ecriture(
+    date VARCHAR(20),
+    ref_piece VARCHAR(20),
+    compte INT,
+    tiers VARCHAR(20),
+    Intitule VARCHAR(50),
+    Libelle VARCHAR(50),
+    debit DOUBLE,
+    credit DOUBLE
 );
 
 CREATE TABLE BanqueJournal(
@@ -141,3 +166,81 @@ CREATE TABLE BanqueJournal(
 DROP  TABLE Info;
 DROP TABLE Plan_Comptable;
  create or replace view total as SELECT SUM(debit) AS totalDebit, SUM(credit) AS totalCredit FROM journalTemporaire;
+ SELECT sum(debit) as valeurBrut FROM journalTemporaireEcriture WHERE compte LIKE '20%';
+ SELECT sum(credit) as valeurBrut FROM journalTemporaireEcriture WHERE compte LIKE '280%';
+ SELECT sum(credit) as amortissement,sum(debit) as brut,(amortissement-brut) as net FROM journalTemporaireEcriture WHERE compte LIKE '280%' or compte LIKE '20%';
+
+
+
+--compte20
+create or replace view compte20Actif AS
+SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '280%' or compte LIKE '20%';
+
+--compte21
+create or replace view compte21Actif AS
+SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '281%' or compte LIKE '21%';
+
+--compte23
+create or replace view compte23Actif AS
+SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '283%' or compte LIKE '23%';
+
+
+create or replace view compte3Actif AS
+SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '3%';
+
+create or replace view compte40Actif AS
+SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '40%';
+
+create or replace view compte41Actif AS
+SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '41%';
+
+
+create or replace view compte5Actif AS
+SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '5%';
+
+
+SELECT sum(debit), sum(credit) FROM journalTemporaireEcriture WHERE compte LIKE '42%' AND compte LIKE '%49';
+
+SELECT debit, credit 
+FROM journalTemporaireEcriture 
+WHERE compte BETWEEN '42' AND '490';
+
+--compte10
+create or replace view compte10Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '10%';
+
+--compte11
+create or replace view compte11Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '11%';
+
+--compte12
+create or replace view compte12Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '12%';
+
+--compte161
+create or replace view compte161Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '161%';
+
+
+--compte165
+create or replace view compte165Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '165%';
+
+--compte401
+create or replace view compte401Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '401%';
+
+
+--compte408
+create or replace view compte408Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '408%';
+
+
+--compte49
+create or replace view compte49Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '49%';
+
+
+--compte51
+create or replace view compte51Passif AS
+SELECT sum(credit) as brut FROM journalTemporaireEcriture WHERE compte LIKE '51%';
