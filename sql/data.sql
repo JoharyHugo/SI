@@ -115,12 +115,31 @@ CREATE TABLE AchatJournal(
     tiers VARCHAR(20),
     Intitule VARCHAR(50),
     Libelle VARCHAR(50),
+    prixUnitaire VARCHAR(50),
+    quantite DOUBLE,
     debit DOUBLE,
     credit DOUBLE
     idCompteGenerale INT,
     FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
     idCompteTiers INT,
     FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
+);
+
+
+CREATE TABLE AchatTable(
+    idAchat INT AUTO_INCREMENT PRIMARY KEY,
+    date VARCHAR(20),
+    ref_piece VARCHAR(20),
+    compte INT,
+    tiers VARCHAR(20),
+    Intitule VARCHAR(50),
+    Libelle VARCHAR(50),
+    prixUnitaire VARCHAR(50),
+    quantite DOUBLE,
+    idCompteGenerale INT,
+    FOREIGN KEY(idCompteGenerale) REFERENCES Plan_Comptable(id),
+    idCompteTiers INT,
+    FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id)
 );
 
 CREATE TABLE VenteJournal(

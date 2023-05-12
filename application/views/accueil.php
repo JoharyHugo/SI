@@ -15,6 +15,10 @@
           <li><a href="<?php echo base_url("welcome/tiers"); ?>">Plan Tiers</a></li>
           <li><a href="<?php echo site_url('journalAchat/verification');?>">Grand Livre</a></li>
           <li><a href="<?php echo site_url('journalAchat/verificationBalance');?>">Balance</a></li>
+          <li><a href="<?php echo site_url('balance/Actif');?>">Compte Actif</a></li>
+          <li><a href="<?php echo site_url('balance/Passif');?>">Compte Passif</a></li>
+          <li><a href="<?php echo site_url('balance/Resultat');?>">Compte de resultat</a></li>
+          <li><a href="<?php echo site_url('journalAchat/seuil_rentabilite');?>">voir seuil de rentabilité</a></li>
         </ul>
       </nav>
     </header>

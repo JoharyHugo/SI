@@ -3,7 +3,7 @@
 class Achat_model extends CI_Model{
     
     public function getlastAchat(){
-        $sql="SELECT * FROM AchatJournal ORDER BY idAchat DESC LIMIT 1";
+        $sql="SELECT * FROM AchatTable ORDER BY idAchat DESC LIMIT 1";
         $query=$this->db->query($sql);
         $info= $query->row_array();
         return $info;
@@ -63,7 +63,7 @@ class Achat_model extends CI_Model{
         return $liste;
     }
     public function getAchatid($id){
-        $sql="SELECT * FROM AchatJournal WHERE idAchat=%d";
+        $sql="SELECT * FROM AchatTable WHERE idAchat=%d";
         $sql=sprintf($sql,$id);
         $query=$this->db->query($sql);
         $info= $query->row_array();
@@ -84,7 +84,7 @@ class Achat_model extends CI_Model{
     }
     public function getallAchat()
     {
-        $sql="SELECT * FROM AchatJournal ";
+        $sql="SELECT * FROM AchatTable ";
         $query=$this->db->query($sql);
         $liste=array();
         foreach($query->result_array() as $row){

@@ -57,7 +57,12 @@ class Welcome extends CI_Controller {
 	public function grandLivre()
 	{
 		$this->load->view('GrandLivre');
-	}	
+	}
+	public function AchatFormulaire()
+	{
+		$this->load->view('SaisieAchat');
+	}
+	
 	public function bienvennue()
 	{
 		$this->load->view('accueil');

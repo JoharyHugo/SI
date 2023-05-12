@@ -37,8 +37,8 @@ class Achat extends CI_Controller{
     }
     public function achatAnalyse(){
 
-      $this->load->model('Achat_model','model');
-      $achat=$this->model->getallAchat();
+      $this->load->model('saisiAchat_model','model');
+      $achat=$this->model->getAllAchat();
       $data['achat']=$achat;
       $this->load->view('TabAchat',$data);
     }
