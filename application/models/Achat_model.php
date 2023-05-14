@@ -8,9 +8,9 @@ class Achat_model extends CI_Model{
         $info= $query->row_array();
         return $info;
     }
-    public function insertdetailCharge($idAchat,$idNature,$idtype,$quantite,$prix,$unite){
-        $sql="INSERT INTO detailCharge VALUES (%d ,%d,%d,%d,%d,'%s')";
-        $sql=sprintf($sql,$idAchat,$idNature,$idtype,$quantite,$prix,$unite);
+    public function insertdetailCharge($idAchat,$idNature,$idtype){
+        $sql="INSERT INTO detailCharge VALUES (%d ,%d,%d)";
+        $sql=sprintf($sql,$idAchat,$idNature,$idtype);
         try {
             //echo $sql;
             $this->db->query($sql);

@@ -201,10 +201,7 @@ CREATE TABLE detailCharge(
     idAchat INT,
     idNatureCharge INT,
     idtypeCharge INT,
-    quantite INT,
-    prix DOUBLE,
-    Unite VARCHAR(20),
-    FOREIGN KEY (idAchat) REFERENCES AchatJournal(idAchat),
+    FOREIGN KEY (idAchat) REFERENCES AchatTable(idAchat),
     FOREIGN KEY (idNatureCharge) REFERENCES NatureCharge(idNatureCharge),
     FOREIGN KEY (idtypeCharge) REFERENCES TypeCharge(idtypeCharge)
 );
@@ -213,9 +210,17 @@ CREATE TABLE ChargeCentre(
     idCentre INT,
     pourcentage DOUBLE,
     prix DOUBLE,
-    FOREIGN KEY (idAchat) REFERENCES AchatJournal(idAchat),
+    FOREIGN KEY (idAchat) REFERENCES AchatTable(idAchat),
     FOREIGN KEY (idCentre) REFERENCES Centre (idCentre)
 );
+insert into NatureCharge values (null,'Variable');
+insert into NatureCharge values (null,'Fixe');
+insert into TypeCharge values (null,'Corporable');
+insert into TypeCharge values (null,'Incorporable');
+insert into TypeCharge values (null,'Suppletive');
+insert into AchatTable (Libelle,prixUnitaire,quantite) values('essence',5000,5);
+values (values)
+values (values)
 DROP TABLE ChargeCentre;
 DROP TABLE Charge;
 DROP  TABLE Info;
@@ -224,7 +229,9 @@ DROP TABLE Plan_Comptable;
  SELECT sum(debit) as valeurBrut FROM journalTemporaireEcriture WHERE compte LIKE '20%';
  SELECT sum(credit) as valeurBrut FROM journalTemporaireEcriture WHERE compte LIKE '280%';
  SELECT sum(credit) as amortissement,sum(debit) as brut,(amortissement-brut) as net FROM journalTemporaireEcriture WHERE compte LIKE '280%' or compte LIKE '20%';
-
+CREATE  OR REPLACE V_AchatNature as SELECT (Libelle.Achat) as Rubrique ,(prixUnitaire*quantite.Achat) as Total,(Unite.Achat) as Unite, (NatureCharge.Nature )as Nature  FROM AchatTable as Achat 
+JOIN detailCharge on idAchat.Achat=idAchat.detailCharge
+JOIN NatureCharge as Nature on idNatureCharge.Nature=idNatureCharge.detailCharge;
 
 
 --compte20

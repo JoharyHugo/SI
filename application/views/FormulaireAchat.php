@@ -31,18 +31,6 @@
     </select>
   </div>
   <div>
-  <label for="prix">Prix Unitaire</label>
-  <input type="number" name="prix" id="prix">
-  </div>
-  <div>
-  <label for="quantite">Quantite</label>
-  <input type="number" name="quantite" id="quantite">
-  </div>
-  <div>
-  <label for="unite">Unite</label>
-  <input type="text" name="unite" id="unite">
-  </div>
-  <div>
     <input type="hidden" name="idAchat" value="<?php echo $info ['idAchat']; ?>"><br><br>
    
   </div>
