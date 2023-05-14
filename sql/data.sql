@@ -115,6 +115,8 @@ CREATE TABLE AchatJournal(
     tiers VARCHAR(20),
     Intitule VARCHAR(50),
     Libelle VARCHAR(50),
+    prixUnitaire VARCHAR(50),
+    quantite DOUBLE,
     debit DOUBLE,
     credit DOUBLE
     idCompteGenerale INT,
@@ -123,6 +125,26 @@ CREATE TABLE AchatJournal(
     FOREIGN KEY(idCompteTiers) REFERENCES Plan_Tiers(id),
 );
 
+
+CREATE TABLE AchatTable(
+    idAchat INT AUTO_INCREMENT PRIMARY KEY,
+    date VARCHAR(20),
+    numeroPiece VARCHAR(20),
+    ref_piece VARCHAR(20),
+    compte INT,
+    tiers VARCHAR(20),
+    Libelle VARCHAR(50),
+    prixUnitaire VARCHAR(50),
+    quantite DOUBLE,
+    credit INT
+);
+
+create view journalAchatTable as select date,numeroPiece,ref_piece,compte,tiers,Libelle,prixUnitaire,quantite,(quantite*prixUnitaire) as debit,credit from AchatTable;
+select prixUnitaire*quantite from AchatTable;
+create view debitAchat as
+select prixUnitaire*quantite from AchatTable WHERE compte LIKE '411%';
+create view creditAchat as
+select prixUnitaire*quantite from AchatTable WHERE compte LIKE '401%';
 CREATE TABLE VenteJournal(
     idVente INT AUTO_INCREMENT PRIMARY KEY,
     date INT,
