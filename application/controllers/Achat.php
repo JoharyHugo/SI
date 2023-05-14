@@ -20,11 +20,8 @@ class Achat extends CI_Controller{
         $idAchat=$this->input->post('idAchat');
         $idtype=$this->input->post('type');
         $idNature=$this->input->post('nature');
-        $quantite=$this->input->post('quantite');
-        $prix=$this->input->post('prix');
-        $unite=$this->input->post('unite');
         $this->load->model('Achat_model','model');
-        $this->model->insertdetailCharge($idAchat,$idNature,$idtype,$quantite,$prix,$unite);
+        $this->model->insertdetailCharge($idAchat,$idNature,$idtype);
         $centre=$this->model->getAllCentre();
         $data['idAchat']=$idAchat;
         $data['centre']=$centre;
@@ -48,8 +45,8 @@ class Achat extends CI_Controller{
       $idCentre=$this->input->post('centre');
       $pourcentage=$this->input->post('pourcentage');
       $this->load->model('Achat_model','model');
-      $achat=$this->model->getdetailChargeId($idAchat);
-      $prixtotal=($pourcentage*$achat['quantite']*$achat['prix'])/100;
+      $achat=$this->model->getAchatid($idAchat);
+      $prixtotal=($pourcentage*$achat['quantite']*$achat['prixUnitaire'])/100;
       $this->model->insertCentreAchat($idAchat,$idCentre,$pourcentage,$prixtotal);
       $data['idAchat']=$idAchat;
       $centre=$this->model->getAllCentre();
