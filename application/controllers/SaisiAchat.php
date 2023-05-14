@@ -24,38 +24,46 @@ class SaisiAchat extends CI_Controller{
         
         $tiers = $this->input->post('compte2');
         $libelle = $this->input->post('libelle');
-        $type = $this->input->post('type');
-        $devise = $this->input->post('devise');
-        $debit = $this->input->post('debit');
-        $credit = $this->input->post('credit');
-        $montant=$this->input->post('montant');
         $prix=$this->input->post('pu');
         $quantite=$this->input->post('Quantite');
-        $this->model->insertNewAchat($jour,$numero,$piece,$compte,$tiers,$libelle,$prix,$quantite,$devise,$montant);
+        $credit=$this->input->post('credit');
+        $this->model->insertNewAchat($jour,$numero,$piece,$compte,$tiers,$libelle,$prix,$quantite,$credit);
         //redirect("./welcome/index");
         $this->load->view('SaisieAchat');
     }
 
     public function achatAnalyse(){
 
-      $this->load->model('Achat_model','model');
-      $achat=$this->model->getallAchat();
+      $this->load->model('SaisiAchat_model','model');
+      $achat=$this->model->getAllAchat();
       $data['achat']=$achat;
-      $this->load->view('TabAchat',$data);
+      $this->load->view('TabAchatJournal', array('data' => $data));
     }
-    public function insertCentreCharge ()
+
+
+  
+    public function verificationTotalAchat()
     {
-      $idAchat=$this->input->post('idAchat');
-      $idCentre=$this->input->post('centre');
-      $pourcentage=$this->input->post('pourcentage');
-      $this->load->model('Achat_model','model');
-      $achat=$this->model->getdetailChargeId($idAchat);
-      $prixtotal=($pourcentage*$achat['quantite']*$achat['prix'])/100;
-      $this->model->insertCentreAchat($idAchat,$idCentre,$pourcentage,$prixtotal);
-      $data['idAchat']=$idAchat;
-      $centre=$this->model->getAllCentre();
-      $data['centre']=$centre;
-      $this->load->view('FormulaireCentreAchat',$data);
+        $this->load->model('SaisiAchat_model', 'model');   
+        $isBalanceEqual = $this->model->verificationSommeAchat();
+            if($isBalanceEqual) {
+                $val=$this->model->getAllAchat();
+                $data['achat'] = $val;
+                $donnee['total']=$isBalanceEqual;
+                $this->load->view('TexteValidationAchat',$donnee);
+               // $this->load->view('JourneauxAffichage2',$data);
+            } else {
+                echo "ecriture non valide";
+            }
+    }
+    
+    public function total1()
+    {
+        $this->load->model('SaisiAchat_model', 'model');
+        $rep=$this->model->getAllAchat();
+        $this->model->verificationSommeAchat();
+        $valiny['journal'] = $rep;
+        $this->load->view('TotalAchat',$valiny);
     }
 }
 ?>

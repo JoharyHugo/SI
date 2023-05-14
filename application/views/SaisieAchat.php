@@ -32,6 +32,7 @@
                     <th>Montant_Devise</th>
                     <th>Prix Unitaire</th>
                     <th>Quantite</th>
+                    <th>credit</th>
                 </tr>
                 <tr>
                     <td><select name="jour" id="">
@@ -41,7 +42,7 @@
                     </select></td>
                     <td><input type="number" name="piece"></td>
                     <td><input type="text" name="reference"></td>
-                    <td><input type="number" name="compte1"></td>
+                    <td><input type="text" name="compte1"></td>
                     <td><input type="text" name="compte2"></td>
                     <td><input type="text" name="libelle"></td>
                     <td><select name="devise" id="devise">
@@ -52,13 +53,14 @@
                     <td><input type="number" name="montant"></td>
                     <td><input type="number" name="pu"></td>
                     <td><input type="number" name="Quantite"></td>
+                    <td><input type="number" name="credit"></td>
                 </tr>
                </table>
           
               <center><input type="submit" value="Valider" id="validation" style="background-color: blue;"></center>
                </form>
             </div>
-           
+           <a href="<?php echo site_url('saisiAchat/verificationTotalAchat');?>">Voir journal Achat</a>
             <div class="col-md-6" >
             </div>
         </div>    
