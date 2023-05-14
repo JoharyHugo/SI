@@ -231,6 +231,7 @@ JOIN detailCharge on idAchat.Achat=idAchat.detailCharge
 JOIN NatureCharge as Nature on idNatureCharge.Nature=idNatureCharge.detailCharge;
 
 
+
 --compte20
 create or replace view compte20Actif AS
 SELECT sum(credit) as amortissement,sum(debit) as brut,(sum(debit)-sum(credit)) as net FROM journalTemporaireEcriture WHERE compte LIKE '280%' or compte LIKE '20%';
