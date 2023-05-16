@@ -223,6 +223,13 @@ CREATE TABLE Centredetail(
     FOREIGN KEY (idCentreStructurel) REFERENCES Centre (idCentre),
     FOREIGN KEY (idCentreOperationel) REFERENCES Centre (idCentre)
 );
+
+select Centre.NomCentre,CentreDt.CoutDirect,CentreDt.Cle,CentreDt.CentreDt.CentreStructurel
+from Centre join Centredetail as CentreDt on Centre.idCentre=CentreDt.idCentreStructurel
+join Centre on Centre.idCentre=CentreDt.idCentreOperationel;
+
+
+
 insert into NatureCharge values (null,'Variable');
 insert into NatureCharge values (null,'Fixe');
 insert into TypeCharge values (null,'Corporable');
