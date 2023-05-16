@@ -239,10 +239,81 @@ DROP TABLE Plan_Comptable;
  SELECT sum(debit) as valeurBrut FROM journalTemporaireEcriture WHERE compte LIKE '20%';
  SELECT sum(credit) as valeurBrut FROM journalTemporaireEcriture WHERE compte LIKE '280%';
  SELECT sum(credit) as amortissement,sum(debit) as brut,(amortissement-brut) as net FROM journalTemporaireEcriture WHERE compte LIKE '280%' or compte LIKE '20%';
-CREATE  OR REPLACE V_AchatNature as SELECT (Libelle.Achat) as Rubrique ,(prixUnitaire*quantite.Achat) as Total,(Unite.Achat) as Unite, (NatureCharge.Nature )as Nature  FROM AchatTable as Achat 
-JOIN detailCharge on idAchat.Achat=idAchat.detailCharge
-JOIN NatureCharge as Nature on idNatureCharge.Nature=idNatureCharge.detailCharge;
+CREATE  OR REPLACE view V_AchatNature as SELECT (Achat.Libelle) as Rubrique ,(Achat.prixUnitaire*Achat.quantite) as Total,(Achat.Unite) as Unite, (Nature.NatureCharge)as Nature  FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge;
 
+
+CREATE  OR REPLACE view v_achatnaturecentreadminvariable as SELECT (Achat.Libelle) as Rubrique ,Charge.pourcentage as pourcentage,Charge.prix as Variable , sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='Adm/dist' AND Nature.NatureCharge='Variable';
+ 
+CREATE  OR REPLACE view v_achatnaturecentreadminfixe as SELECT (Achat.Libelle) as Rubrique ,Charge.pourcentage as pourcentage,Charge.prix as Variable,sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='Adm/dist' AND Nature.NatureCharge='Fixe';
+
+
+CREATE  OR REPLACE view v_achatnaturecentreplantationfixe as SELECT (Achat.Libelle) as Rubrique ,Charge.pourcentage as pourcentage,Charge.prix as Variable,sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='Plantation' AND Nature.NatureCharge='Fixe';
+
+ 
+CREATE  OR REPLACE view v_achatnaturecentreplantationvariable as SELECT (Achat.Libelle) as Rubrique ,Charge.pourcentage as pourcentage,Charge.prix as Variable,sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='Plantation' AND Nature.NatureCharge='Variable';
+
+
+
+CREATE  OR REPLACE  view v_achatnaturecentreusinefixe as SELECT (Achat.Libelle) as Rubrique ,Charge.pourcentage as pourcentage,Charge.prix as Variable,sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='Usine' AND Nature.NatureCharge='fixe';
+
+
+CREATE  OR REPLACE view  v_achatnaturecentreusinevariable as SELECT (Achat.Libelle) as Rubrique ,Charge.pourcentage as pourcentage,Charge.prix as Variable,sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='Usine' AND Nature.NatureCharge='Variable';
+
+
+CREATE  OR REPLACE view  totaladmin as SELECT sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='Adm/dist';
+
+
+CREATE  OR REPLACE view  totalplantation as SELECT sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='plantation';
+
+
+CREATE  OR REPLACE view  totalusine as SELECT sum(Charge.prix) as Total FROM AchatTable as Achat 
+JOIN detailCharge on Achat.idAchat=detailCharge.idAchat
+JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
+JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
+JOIN Centre on Centre.idCentre=Charge.idCentre 
+WHERE Centre.NomCentre='usine';
 
 
 --compte20
