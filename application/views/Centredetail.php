@@ -50,7 +50,7 @@ button:hover {
 <body>
     <h1>Formulaire</h1>
     
-    <form>
+    <form action="#" method="get">
         <label for="select1">Centre Structurel :</label>
         <select id="select1" name="idstructurel">
             <?php for ($i=0; $i <count($centre) ; $i++) {  ?>

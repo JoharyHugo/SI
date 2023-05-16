@@ -8,5 +8,11 @@ class Centre extends CI_Controller {
     $data['centre']=$centre;
     $this->load->view('Centredetail',$data);
  }
+ public function insertionCentredetail()
+ {
+   $idstructurel=$this->input->get('idstructurel');
+   $idoperationel=$this->input->get('idoperationel');
+   $cle=$this->input->
+ }
 }
  ?>
