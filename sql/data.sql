@@ -213,6 +213,16 @@ CREATE TABLE ChargeCentre(
     FOREIGN KEY (idAchat) REFERENCES AchatTable(idAchat),
     FOREIGN KEY (idCentre) REFERENCES Centre (idCentre)
 );
+CREATE TABLE Centredetail(
+    idCentreStructurel INT,
+    idCentreOperationel INT,
+    CoutDirect DOUBLE,
+    Cle DOUBLE,
+    CentreStructurel DOUBLE,
+    CoutTotal DOUBLE,
+    FOREIGN KEY (idCentreStructurel) REFERENCES Centre (idCentre),
+    FOREIGN KEY (idCentreOperationel) REFERENCES Centre (idCentre)
+);
 insert into NatureCharge values (null,'Variable');
 insert into NatureCharge values (null,'Fixe');
 insert into TypeCharge values (null,'Corporable');
