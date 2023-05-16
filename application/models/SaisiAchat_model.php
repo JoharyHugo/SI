@@ -29,6 +29,112 @@
             return $liste;
         } 
 
+        public function getAllAchatAnalytique(){
+            $sql = "SELECT * FROM v_achatnature";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getAllAchatCentreAdminFixe(){
+            $sql = "SELECT * FROM v_achatnaturecentreadminfixe";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getAllAchatCentreAdminVariable(){
+            $sql = "SELECT * FROM v_achatnaturecentreadminvariable";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getAllAchatCentrePlantationFixe(){
+            $sql = "SELECT * FROM v_achatnaturecentreplantationfixe";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getAllAchatCentrePlantationVariable(){
+            $sql = "SELECT * FROM v_achatnaturecentreplantationvariable";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getAllAchatCentreUsineFixe(){
+            $sql = "SELECT * FROM v_achatnaturecentreusinefixe";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+        
+        public function getAllAchatCentreUsineVariable(){
+            $sql = "SELECT * FROM v_achatnaturecentreusinevariable";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getTotalAdmin(){
+            $sql = "SELECT * FROM totaladmin";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+
+        
+        public function getTotalPlantation(){
+            $sql = "SELECT * FROM totalplantation";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
+        
+        public function getTotalUsine(){
+            $sql = "SELECT * FROM totalusine";
+            $query=$this->db->query($sql);
+            $liste=array();
+           foreach($query->result_array() as $row){
+             $liste[]=$row;
+           }
+            return $liste;
+        } 
         public function getAchat($id){
             $sql = "SELECT * FROM AchatTable WHERE id = %d";
             $sql = sprintf($sql, $id);

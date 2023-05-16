@@ -21,7 +21,7 @@
           <li><a href="<?php echo site_url('journalAchat/verificationTotalVente');?>">Journal vente</a></li>
           <li><a href="<?php echo site_url('journalAchat/verificationTotalBanque');?>">Journal banque</a></li>
           <li><a href="<?php echo site_url('journalAchat/exportPdf');?>">exportPdf</a></li>
-          <li><a href="<?php echo site_url('journalAchat/tableauPdf');?>">TableauPdf</a></li>
+          <li><a href="<?php echo site_url('saisiAchat/tableauPdf');?>">TableauPdf</a></li>
           <!--li><a href="<?php echo site_url('journalAchat/tableauPdf1');?>">TableauPdf1</a></!li-->
 
         </ul>
