@@ -12,7 +12,14 @@ class Centre extends CI_Controller {
  {
    $idstructurel=$this->input->get('idstructurel');
    $idoperationel=$this->input->get('idoperationel');
-   $cle=$this->input->
+   $cle=$this->input->get('cle');
+   $this->load->model('Centre_model','model');
+   $coutDirect=$this->model-> getSommeAchatCentre($idoperationel);
+   $CentreStructurel=($cle*$coutDirect['CoutDirect'])/100;
+   $total=$CentreStructurel+$coutDirect['CoutDirect'];
+   $this->model->insertCentres($idstructurel,$idoperationel,$coutDirect['CoutDirect'],$cle,$CentreStructurel,$total);
+
+   redirect("./centre/formulaireCentre");
  }
 }
  ?>

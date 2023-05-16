@@ -21,19 +21,6 @@ class Achat_model extends CI_Model{
             echo $th->getMessage();
         }
     }
-    /*public function insertChargeCentre($idAchat,$idCentre,$pourcentage){
-        $sql="INSERT INTO ChargeCentre VALUES (%d ,%d,%d)";
-        $sql=sprintf($sql,$idAchat,$idCentre,$pourcentage);
-        try {
-            //echo $sql;
-            $this->db->query($sql);
-        } 
-        catch (Exception $th) 
-        {
-            throw new Exception($th->getMessage());
-            echo $th->getMessage();
-        }
-    }*/
     public function getAllNature(){
         $sql="SELECT * FROM NatureCharge";
         $query=$this->db->query($sql);

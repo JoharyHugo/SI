@@ -50,7 +50,7 @@ button:hover {
 <body>
     <h1>Formulaire</h1>
     
-    <form action="#" method="get">
+    <form action="<?php echo site_url("Centre/insertionCentredetail"); ?>" method="get">
         <label for="select1">Centre Structurel :</label>
         <select id="select1" name="idstructurel">
             <?php for ($i=0; $i <count($centre) ; $i++) {  ?>
@@ -66,7 +66,7 @@ button:hover {
         </select>
         
         <label for="numberInput">Cle:</label>
-        <input type="number" id="numberInput" name="cle">
+        <input type="number" id="numberInput" step="0.01" name="cle">
         
         <button type="submit">Validation</button>
     </form>

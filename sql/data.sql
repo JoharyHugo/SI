@@ -224,11 +224,11 @@ CREATE TABLE Centredetail(
     FOREIGN KEY (idCentreOperationel) REFERENCES Centre (idCentre)
 );
 
-select Centre.NomCentre,CentreDt.CoutDirect,CentreDt.Cle,CentreDt.CentreDt.CentreStructurel
+
+
+CREATE OR REPLACE VIEW V_aboutCentre as select CentreDt.idCentreStructurel as idCentreStructurel ,Centre.NomCentre as CentreStructurel ,CentreDt.idCentreOperationel as idCentreOperationel,Centreop.NomCentre as CentreOperationel,CentreDt.CoutDirect as CoutDirect ,CentreDt.Cle as Cle,CentreDt.CentreStructurel as CentreStructure,CentreDt.CoutTotal as CoutTotal
 from Centre join Centredetail as CentreDt on Centre.idCentre=CentreDt.idCentreStructurel
-join Centre on Centre.idCentre=CentreDt.idCentreOperationel;
-
-
+join Centre as Centreop on Centreop.idCentre=CentreDt.idCentreOperationel;
 
 insert into NatureCharge values (null,'Variable');
 insert into NatureCharge values (null,'Fixe');
@@ -321,6 +321,7 @@ JOIN NatureCharge as Nature on Nature.idNatureCharge=detailCharge.idNatureCharge
 JOIN ChargeCentre as Charge on Charge.idAchat=Achat.idAchat
 JOIN Centre on Centre.idCentre=Charge.idCentre 
 WHERE Centre.NomCentre='usine';
+--view Johary--
 
 
 --compte20

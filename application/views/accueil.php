@@ -19,19 +19,13 @@
           <li><a href="<?php echo site_url('balance/Passif');?>">Compte Passif</a></li>
           <li><a href="<?php echo site_url('balance/Resultat');?>">Compte de resultat</a></li>
           <li><a href="<?php echo site_url('journalAchat/seuil_rentabilite');?>">voir seuil de rentabilité</a></li>
+          <li><a href="<?php echo site_url("Achat/achatAnalyse"); ?>">Achat Detail</a></li>
+          <li><a href="<?php echo site_url("Centre/formulaireCentre") ;?>">Structure Centre</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <center><h1>Bienvenue</h1></center>
-      <div id="info">
-        <ul id="detail">
-          <li>Nom:</li>
-          <li>Logo:</li>
-          <li>Adresse:</li>
-          <a href="<?php echo site_url("Achat/achatAnalyse") ?>">Achat Detail</a>
-   
-        </ul>
         
       </div>
     </main>
