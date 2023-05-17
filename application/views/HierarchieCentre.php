@@ -7,6 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Center</title>
 </head>
+<style>
+      h5 {
+            margin-bottom: 20px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+</style>
 <body>
     <?php for ($i=0; $i <count($info) ; $i++) {  ?>
        <h5><?php echo $info[$i][0]['CentreStructurel'] ; ?></h5><br> <br>
