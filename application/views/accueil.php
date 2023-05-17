@@ -21,6 +21,7 @@
           <li><a href="<?php echo site_url('journalAchat/seuil_rentabilite');?>">voir seuil de rentabilité</a></li>
           <li><a href="<?php echo site_url("Achat/achatAnalyse"); ?>">Achat Detail</a></li>
           <li><a href="<?php echo site_url("Centre/formulaireCentre") ;?>">Structure Centre</a></li>
+          <li><a href="<?php echo site_url("Centre/getCentrestropr") ;?>">About Centre</a></li>
         </ul>
       </nav>
     </header>

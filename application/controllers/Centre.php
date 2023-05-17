@@ -21,5 +21,17 @@ class Centre extends CI_Controller {
 
    redirect("./centre/formulaireCentre");
  }
+ public function getCentrestropr()
+ {
+  $this->load->model('Centre_model','model');
+  $information=array();
+  $idstructurel=$this->model->getAllidStructurel();
+  for ($i=0; $i <count($idstructurel) ; $i++) { 
+     $centre=$this->model->getCentredetail($idstructurel[$i]['idCentreStructurel']);
+     $information[]=$centre;
+  }
+  $data['info']=$information;
+  $this->load->view('HierarchieCentre',$data);
+ }
 }
  ?>

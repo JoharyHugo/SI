@@ -17,7 +17,7 @@ class Centre_model extends CI_Model {
     }
     public function getAllidStructurel()
     {
-      $sql="SELECT DISTINCT idCentreStructurel FROM Centredetail";
+      $sql="SELECT DISTINCT  idCentreStructurel FROM Centredetail";
       $query=$this->db->query($sql);
       $liste=array();
       foreach($query->result_array() as $row){
